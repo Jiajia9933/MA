@@ -1,0 +1,98 @@
+# Download and compile the REAL TIME Jetson Linux Kernel 5.15.122-rt-tegra
+
+	1. Download source code from the NVIDIA site: 
+
+		- This will download the kernel version 5.15.136
+
+			cd ~/Desktop/MA/Orin/
+
+			weget https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v3.0/sources/public_sources.tbz2
+
+
+
+		- or download manually:
+
+			https://developer.nvidia.com/embedded/jetson-linux
+				Driver Package(BSP) Sources 		==> 	the kernel version 5.15.122
+				Sensor Processing Engine Sources  	==> 	the kernel version 5.15.136
+
+
+		
+
+	2. Open a new Terminal and extract the source code to your desired folder
+
+		cd ~/Desktop/MA/Orin/
+		tar xf public_sources.tbz2
+
+		cd ~/Desktop/MA/Orin/Linux_for_Tegra/source
+		tar xf kernel_src.tbz2
+		tar xf kernel_oot_modules_src.tbz2
+		tar xf nvidia_kernel_display_driver_source.tbz2
+
+
+
+	3. Build the kernel
+
+
+		cd ~/Desktop/MA/Orin/Linux_for_Tegra/source
+		./generic_rt_build.sh "enable"
+
+		
+
+		SETTINGS before build:
+
+		=============================================================================
+
+		export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+
+		export INSTALL_MOD_PATH=/home/jiajia/Desktop/MA/Orin/Linux_for_Tegra/rootfs/
+
+		export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+
+		-----------------------------------------------------------------------------
+
+		If you are building the real-time kernel:
+		
+		export IGNORE_PREEMPT_RT_PRESENCE=1
+
+		=============================================================================
+
+
+
+
+		
+		make -C kernel
+		sudo -E make install -C kernel
+		make modules
+		sudo -E make modules_install
+		make dtbs
+
+
+
+
+
+
+# 把 jailhouse 相关 patches 以及 config 设置好，然后再 make
+
+git am ../jailhouse-documentation/jailhouse-enabling-patches/5.15.y/*.patch
+
+
+
+# 把 image 和 .dtb 文件复制到sam:
+
+scp arch/arm64/boot/Image arch/arm64/boot/dts/rockchip/rk3566-lubancat-0.dtb jiajia@sam:/tftpboot/orin/
+
+
+
+# 把modules复制到sam:
+
+rsync -ai ../Linux_for_Tegra/rootfs/lib/modules/ jiajia@sam:nfsroots/orin/lib/modules/
+
+
+# 
+
+		
+
+
+
+

@@ -1,0 +1,1152 @@
+sam:
+
+jiajia@sam:/tftpboot/orin$ history
+    1  taco
+    2  taco target orin on
+    3  taco target orin on
+    4  taco target orin -s
+    5  taco target orin --ip
+    6  ssh Nvidia@192.168.1.58
+    7  ssh jiajia@192.168.1.58
+    8  taco
+    9  uname -a
+   10  lscpu
+   11  lsblk
+   12  taco target orin
+   13  lscpu
+   14  whoami
+   15  free -h
+   16  ssh Nvidia@192.168.1.58
+   17  taco target orin -s
+   18  taco
+   19  taco target orin off
+   20  taco
+   21  taco target orin on
+   22  taco
+   23  taco target orin -s
+   24  date
+   25  taco
+   26  date
+   27  taco
+   28  taco target orin -s
+   29  ping 192.168.1.58
+   30  ping nvidia
+   31  ping Nvidia
+   32  taco
+   33  taco target orin off
+   34  taco
+   35  taco target orin on
+   36  taco
+   37  taco target orin -s
+   38  ping google.de
+   39  cat /etc/resolv.conf
+   40  sudo nano /etc/resolv.conf
+   41  ls -l /tftpboot
+   42  ls -l /tftpboot/orin
+   43  uname -a
+   44  ls
+   45  cd home
+   46  mkdir jiajia
+   47  ls
+   48  cd jiajia
+   49  mkdir test
+   50  cd test/
+   51  cd
+   52  ls
+   53  rmdir /home/jiajia/jiajia/test
+   54  ls
+   55  rmdir /home/jiajia/jiajia
+   56  ls
+   57  cd /tftpboot/orin/
+   58  ls
+   59  cd
+   60  move /home/jiajia/helloworld-aarch64 /tftp/orin/helloworld-aarch64
+   61  mov /home/jiajia/helloworld-aarch64 /tftp/orin/helloworld-aarch64
+   62  mv /home/jiajia/helloworld-aarch64 /tftp/orin/helloworld-aarch64
+   63  mv /home/jiajia/helloworld-aarch64 /tftpboot/orin/helloworld-aarch64
+   64  cd /tftpboot/orin/
+   65  ls
+   66  scp helloworld-aarch64 nvidia@orin:/home/jiajia/
+   67  scp helloworld-aarch64 nvidia@orin:/home/nvidia/
+   68  scp helloworld-aarch64 nvidia@orin:/home/nvidia/jiajia/
+   69  cd
+   70  ls
+   71  taco
+   72  taco target orin -s
+   73  taco
+   74  taco target orin -s
+   75  ls
+   76  cd jiajia
+   77  cd Linux
+   78  ls
+   79  taco target orin -s
+   80  scp /home/jiajia/Image nvidia@orin:/boot/
+   81  scp /home/jiajia/Image nvidia@orin:/boot
+   82  scp /home/jiajia/Image nvidia@orin:/home/nvidia/jiajia/new_kernel/
+   83  scp /home/jiajia/Image nvidia@orin:/home/nvidia/
+   84  scp /home/jiajia/Image nvidia@orin:/home/nvidia/jiajia/
+   85  scp /home/jiajia/Image nvidia@orin:/home/nvidia/jiajia/new/
+   86  ls
+   87  scp -r /home/jiajia/* nvidia@orin:/home/nvidia/jiajia/
+   88  ls
+   89  taco target orin -s
+   90  picocom -b 115200
+   91  picocom -b 115200 /dev/ttyUSB.orin.0
+   92  picocom -b 115200 /dev/ttyUSB.orin.1
+   93  taco
+   94  ls
+   95  cd /tftpboot/orin/
+   96  ls -l
+   97  cat grub.cfg 
+   98  ls
+   99  sudo rm helloworld-aarch64 
+  100  rm helloworld-aarch64 
+  101  ls
+  102  /tftpboot/orin/
+  103  ls
+  104  picocom -b 115200 /dev/ttyUSB.orin.1
+  105  /tftpboot/
+  106  ls
+  107  cd /tftpboot/orin
+  108  ls
+  109  cat grubnetaa64.efi 
+  110  ls
+  111  cat initrd 
+  112  ls
+  113  cd ..
+  114  ls
+  115  clear
+  116  ls -l
+  117  picocom -b 115200 /dev/ttyUSB.orin.1
+  118  exit
+  119  cd /tftpboot/orin/
+  120  ls -lha
+  121  ls
+  122  man ls
+  123  cd l4t_r36.2.0/
+  124  ll
+  125  ls
+  126  ls -lha
+  127  cd ..
+  128  ls -lha
+  129  cat grub.cfg 
+  130  cd /tftpboot/orin/
+  131  ls -l
+  132  history
+  133  taco target orin reset
+  134  taco
+  135  taco target orin reset
+  136  cat grub.cfg 
+  137  cd /tftpboot/
+  138  cd orin
+  139  cat grub.cfg 
+  140  ls -l
+  141  file Image
+  142  filr fdt
+  143  file fdt
+  144  mv fdt fdt.orig
+  145  mv Image Image.orig
+  146  ls
+  147  cd /home/jiajia/
+  148  ls
+  149  ls -l
+  150  cd /tftpboot/orin/
+  151  ls -lha
+  152  cd 
+  153  ls
+  154  cp tegra234-p3737-0000+p3701-0000-nv.dtb /tftpboot/orin/
+  155  cd /tftpboot/orin/
+  156  ls
+  157  mv fdt old.fdt
+  158  ls -lha
+  159  man ln
+  160  ln -s tegra234-p3737-0000+p3701-0000-nv.dtb fdt
+  161  ls
+  162  ls -lha
+  163  cd /tftpboot/orin/
+  164  ls -lha
+  165  cat grub.cfg 
+  166  taco target orin -s
+  167  taco target orin -s
+  168  reset
+  169  taco target orin -s
+  170  taco target orin reset
+  171  taco target orin off
+  172  taco
+  173  taco target orin on
+  174  taco target orin reset
+  175  cd /tftpboot/orin
+  176  ls -l
+  177  scp initrd nvidia@orin:/boot/
+  178  scp initrd nvidia@orin:
+  179  ls -lha
+  180  taco
+  181  taco target orin -s
+  182  exit
+  183  taco
+  184  taco target orin off
+  185  taco target orin on
+  186  taco
+  187  taco target orin -s
+  188  taco target orin reset
+  189  taco target orin -s
+  190  cd /tftpboot/orin/
+  191  ls -l
+  192  mv tegra234-p3737-0000+p3701-0000-nv.dtb tegra234-p3737-0000+p3701-0000-nv1.dtb 
+  193  ls -l
+  194  ln -sf /tftpboot/tegra234-p3737-0000+p3701-0000-nv1.dtb /tftpboot/fdt
+  195  ls -l
+  196  ln -sf /tftpboot/orin/tegra234-p3737-0000+p3701-0000-nv1.dtb /tftpboot/orin/fdt
+  197  ls -l
+  198  ln -sf tegra234-p3737-0000+p3701-0000-nv1.dtb fdt
+  199  ls -l
+  200  cd
+  201  cd /home/jiajia/
+  202  ls -l
+  203  cd ..
+  204  ls -l
+  205  cd jiajia
+  206  ls -l
+  207  cd /home/
+  208  ls -l
+  209  cd
+  210  find . -maxdepth 1 -type f -name '*tegra234*' -delete
+  211  ls -l
+  212  rm -f Image && rm -rf 5.15.122-rt-tegra
+  213  ls -l
+  214  cd /home/jiajia/
+  215  ls -l
+  216  cd /home/
+  217  ls -l
+  218  cd jiajia/
+  219  ls -l
+  220  cd /tftpboot/
+  221  cd orin/
+  222  ls -l
+  223  cat initrd 
+  224  ls -l
+  225  history
+  
+  
+  
+  
+  
+  
+  
+  orin:
+  
+  nvidia@orin:~$ history
+    1  dmesg
+    2  sudo dmesg
+    3  cd /boot/
+    4  l
+    5  ls -la
+    6  cat /proc/partitions 
+    7  cd EF
+    8  ls -la
+    9  cd 
+   10  cat /proc/mounts |grep mmc
+   11  cat /proc/partitions 
+   12  sudo mount /dev/mmcblk3p10 /mnt
+   13  ls -la /mnt/
+   14  mv grubnetaa64.efi /mnt/EFI/BOOT/
+   15  sudo mv grubnetaa64.efi /mnt/EFI/BOOT/
+   16  sudo mkdir -p /mnt/grub
+   17  sudo mv grub.cfg /mnt/grub/grub.cfg
+   18  sudo umount /mnt
+   19  sync
+   20  sudo reboot
+   21  sudo mount /dev/mmcblk3p10 /mnt
+   22  sudo mv grub.cfg /mnt/grub/grub.cfg 
+   23  sync
+   24  sudo umount /mnt 
+   25  uname -a
+   26  sudo mount /dev/mmcblk3p10 /mnt
+   27  sudo mv grubnetaa64.efi.bullseye /mnt/EFI/BOOT/grubnetaa64.efi 
+   28  sync
+   29  sudo umount /mnt 
+   30  sudo reboot
+   31  cd /boot/
+   32  l
+   33  file kernel_tegra234-p3737-0000+p3701-0000-nv.dtb
+   34  cd /sys/firmware/
+   35  l
+   36  ls -la
+   37  cat fdt > ~/fdt
+   38  sudo cat fdt > ~/fdt
+   39  ls -la
+   40  cd 
+   41  ls -la
+   42  sudo reboot
+   43  ls -lrt
+   44  sudo mv fdt /boot/
+   45  sync
+   46  cd /sys/firmware/
+   47  l
+   48  ls -la
+   49  cd 
+   50  sudo mount /dev/mmcblk3p10 /mnt
+   51  sudo mv grub.cfg /mnt/grub/grub.cfg 
+   52  sync
+   53  sudo umount /mnt 
+   54  sudo reboot
+   55  sudo poweroff
+   56  sudo reboot
+   57  ls
+   58  ls -l
+   59  ranger
+   60  ls Downloads
+   61  ls -l Downloads
+   62  ls -l 
+   63  uname -a
+   64  exit
+   65  ls
+   
+   
+   
+   
+   66  cd yjiang
+   67  ls
+   68  cd ..
+   69  uname -a lscpu lsblk
+   70  uname -a lscpu
+   71  uname -a
+   72  cat /etc/nv_tegra_release
+   73  ls
+   74  cat /proc/device-tree/model 
+   75  lsb_release -a
+   76  git --version
+   77  cd Downloads/
+   78  ls
+   79  cd ..
+   80  cd Documents/
+   81  ls
+   82  cd ..
+   83  sudo iptables -L -v -n
+   84  ./source_sync.sh
+   85  sudo apt install git-core
+   86  head -n 1 /etc/nv_tegra_release
+   87  wget https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v2.0/sources/public_sources.tbz2
+   88  ping -c 4 google.com
+   89  exit
+   90  sudo apt-get update
+   91  cat /etc/resolv.conf
+   92  ping -c 4 google.com
+   93  cat /etc/resolv.conf
+   94  systemd-resolve --status
+   95  sudo apt update
+   96  telnet github.com 9418
+   97  nc -zv github.com 9418
+   98  git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/ 
+   99  date
+  100  sudo systemctl start systemd-timesyncd
+  101  date
+  102  sudo systemctl start systemd-timesyncd
+  103  nvidia
+  104  sudo systemctl start systemd-timesyncd
+  105  date
+  106  exit
+  107  date
+  108  sudo systemctl start systemd-timesyncd
+  109  date
+  110  sudo nano /etc/systemd/timesyncd.conf
+  111  sudo date -s "2024-06-20 16:25:00"
+  112  date
+  113  ping -c 4 google.com
+  114  cat /etc/systemd/timesyncd.conf
+  115  date
+  116  systemctl status systemd-timesyncd.service
+  117  sudo nano /etc/systemd/timesyncd.conf
+  118  sudo vi /etc/systemd/timesyncd.conf
+  119  sudo nano /etc/systemd/timesyncd.conf
+  120  sudo systemctl start systemd-timesyncd
+  121  date
+  122  sudo systemctl restart systemd-timesyncd
+  123  timedatectl status
+  124  sudo systemctl restart systemd-timesyncd
+  125  timedatectl status
+  126  sudo systemctl status systemd-timesyncd
+  127  timedatectl status
+  128  sudo systemctl status systemd-timesyncd
+  129  timedatectl status
+  130  sudo systemctl restart systemd-timesyncd
+  131  timedatectl status
+  132  sudo nano /etc/systemd/timesyncd.conf
+  133  sudo vi /etc/systemd/timesyncd.conf
+  134  timedatectl status
+  135  sudo systemctl restart systemd-timesyncd
+  136  timedatectl status
+  137  sudo systemctl status systemd-timesyncd
+  138  timedatectl status
+  139  sudo systemctl daemon-reload
+  140  sudo systemctl restart systemd-timesyncd
+  141  timedatectl status
+  142  sudo systemctl daemon-reload
+  143  sudo systemctl restart systemd-timesyncd
+  144  timedatectl status
+  145  sudo hwclock --systohc
+  146  timedatectl status
+  147  sudo vi /etc/systemd/timesyncd.conf
+  148  sudo systemctl daemon-reload
+  149  sudo systemctl restart systemd-timesyncd
+  150  timedatectl status
+  151  sudo vi /etc/systemd/timesyncd.conf
+  152  sudo timedatectl set-ntp true
+  153  sudo systemctl restaer systemd-timesyncd
+  154  sudo systemctl restart systemd-timesyncd
+  155  timedatectl status
+  156  sudo ufw allow 123/udp
+  157  ping pool.ntp.org
+  158  journalctl -u systemd-timesyncd
+  159  ping 8.8.8.8
+  160  sudo vi /etc/resolv.conf
+  161  systemd-resolve --status
+  162  sudo vi /etc/NetworkManager/NetworkManager.conf
+  163  sudo systemctl restart NetworkManager
+  164  sudo vi /etc/netplan/01-netcfg.yaml
+  165  dpkg -l | grep network-manager
+  166  sudo vi /etc/NetworkManager/NetworkManager.conf
+  167  sudo systemctl restart NetworkManager
+  168  cat /etc/resolv.conf
+  169  sudo systemctl restart NetworkManager
+  170  sudo systemctl restart systemd-timesyncd
+  171  timedatectl status
+  172  ping pool.ntp.org
+  173  sudo vi /etc/NetworkManager/NetworkManager.conf
+  174  sudo systemctl restart NetworkManager
+  175  sudo vi /etc/resolv.conf
+  176  systemd-resolve --status
+  177  clean
+  178  clear
+  179  ping -c 4 google.com
+  180  git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/
+  181  sudo apt install build-essential bc
+  182  sudo apt update
+  183  ping -c 4 google.com
+  184  ip a
+  185  cat /etc/resolv.conf
+  186  systemd-resolve --status
+  187  dig google.com
+  188  sudo apt update
+  189  sudo systemctl restart networking
+  190  sudo systemctl restart network-manager
+  191  sudo systemctl restart systemd-networkd
+  192  exit
+  193  date
+  194  exit
+  195  sudo apt update
+  196  sudo apt-get update
+  197  cat /etc/apt/sources.list
+  198  sudo apt-get clean
+  199  sudo apt-get update
+  200  cat /etc/apt/sources.list.d/
+  201  cat /etc/apt/sources.list.d
+  202  ping -c 4 www.google.com
+  203  ip addr show
+  204  cat /etc/resolv.conf
+  205  ping -c 4 www.google.com
+  206  ip addr show eth0
+  207  ping -c 4 www.google.com
+  208  cat /etc/resolv.conf
+  209  sudo cp /etc/resolv.conf /etc/resolv.conf.backup
+  210  sudo vi /etc/resolv.conf
+  211  sudo systemctl restart networking
+  212  sudo systemctl restart NetworkManager
+  213  ping -c 4 www.google.com
+  214  sudo apt-get update
+  215  ping www.google.com
+  216  ls
+  217  ping 208.67.220.220
+  218  exit
+  219  sudo vi /etc/resolv.conf
+  220  ping google.de
+  221  ping -c 4 google.com
+  222  sudo vi /etc/resolv.conf
+  223  sudo vi /etc/NetworkManager/NetworkManager.conf
+  224  uname -a
+  225  uname -m
+  226  printenv
+  227  printenv serverip
+  228  chmod +x /home/nvidia/helloworld-aarch64
+  229  ls
+  230  mkdir jiajia
+  231  ls
+  232  ls -l /home/nvidia/
+  233  cd jiajia
+  234  ls
+  235  chmod +x /home/nvidia/jiajia/helloworld-aarch64
+  236  /home/nvidia/helloworld-aarch64
+  237  cd
+  238  /home/nvidia/helloworld-aarch64
+  239  /home/nvidia/jiajia/helloworld-aarch64
+  240  ls
+  241  cd /boot/
+  242  ls
+  243  sudo cp /boot/Image /boot/Image.bak
+  244  ls
+  245  mkdir backup
+  246  mkdir /backup
+  247  sudo mkdir /backup
+  248  ls
+  249  cd ..
+  250  ls
+  251  rmdir backup
+  252  sudo rmdir /backup
+  253  ls
+  254  cd /boot/
+  255  sudo mkdir /boot/backup/
+  256  ls
+  257  cd dtb
+  258  ls
+  259  cd ..
+  260  cd extlinux/
+  261  ls
+  262  cd ..
+  263  cd fdt
+  264  ls -d /boot/*/
+  265  sudo rm /boot/Image.bak
+  266  sudo rmdir /boot/backup/
+  267  ls
+  268  sudo mkdir /home/nvidia/1/
+  269  cd ..
+  270  ls
+  271  cd /home/nvidia/
+  272  ls
+  273  sudo rmdir /home/nvidia/1/
+  274  ls
+  275  cd ..
+  276  cd home/nvidia/jiajia/
+  277  sudo mkdir /home/nvidia/jiajia/backup/
+  278  ls
+  279  sudo rm helloworld-aarch64 
+  280  sudo cp -r /boot/* /home/nvidia/jiajia/backup/
+  281  cd backup/
+  282  ls
+  283  cd
+  284  cd /boot/
+  285  sudo rm -rf /boot/*
+  286  ls
+  287  mv /home/nvidia/jiajia/backup /home/nvidia/jiajia/boot_backup
+  288  cd
+  289  cd /home/nvidia/jiajia/
+  290  ls
+  291  cd
+  292  cd /boot/
+  293  sudo mkdir /home/nvidia/jiajia/new_kernel/
+  294  cd /home/nvidia/jiajia/new_kernel/
+  295  cd
+  296  sudo rmdir /home/nvidia/jiajia/new_kernel/
+  297  sudo rm /home/nvidia/Image 
+  298  cd jiajia/
+  299  ls
+  300  sudo mkdir /home/nvidia/jiajia/new/
+  301  ls
+  302  sudo rmdir /home/nvidia/jiajia/new/
+  303  cd /lib/
+  304  ls
+  305  cd /home/nvidia/
+  306  ls
+  307  cd jiajia/
+  308  ls
+  309  sudo mkdir /lib/modules/
+  310  cd /lib/
+  311  ls
+  312  sudo mkdir /home/nvidia/jiajia/modules_backup/
+  313  ls
+  314  cd /home/nvidia/jiajia/modules_backup/
+  315  ls
+  316  cd /lib/modules
+  317  clear
+  318  sudo mv /home/nvidia/jiajia/5.15.122-rt-tegra/ /lib/modules/
+  319  ls
+  320  sudo mv /home/nvidia/jiajia/*.dtb /boot/
+  321  cd /boot/
+  322  ls
+  323  sudo mv /home/nvidia/jiajia/Image /boot/
+  324  ls
+  325  sudo cp -r /home/nvidia/jiajia/boot_backup/extlinux /boot/
+  326  ls
+  327  cd extlinux/
+  328  ls
+  329  sudo reboot
+  
+  
+  
+  
+  330  history
+  331  sudo reboot
+  332  e
+  333  /boot/
+  334  cd /boot/
+  335  ls -l
+  336  cd 
+  337  ls
+  338  cd /
+  339  ls
+  340  cd dev/
+  341  ls
+  342  uname -a
+  343  cd /sys/firmware/
+  344  ls -l
+  345  cd devicetree/
+  346  ls -l
+  347  cd base/
+  348  ls -l
+  349  cat serial-number 
+  350  cat compatible 
+  351  sudo reboot
+  352  cd /boot/
+  353  ls -la
+  354  sudo reboot
+  355  cd /boot/
+  356  ls -la
+  357  cd extlinux/
+  358  ls -la
+  359  cat extlinux.conf
+  360  cat extlinux.conf.nv-update-extlinux-backup 
+  361  cat extlinux.conf
+  362  cd ..
+  363  ls -la
+  364  sudo mount /dev/mmcblk3p10 /mnt
+  365  cd /mnt/
+  366  ls -la
+  367  cd EFI/
+  368  l
+  369  ls -la
+  370  cd BOOT/
+  371  ls -la
+  372  file BOOTAA64.efi 
+  373  cat BOOTAA64.efi 
+  374  sudo reboot
+  375  cd /boot/
+  376  ls
+  377  cd extlinux/
+  378  ls -l
+  379  cat extlinux.conf
+  380  cd ..
+  381  ls
+  382  cd
+  383  ls
+  384  sudo cp initrd /boot/
+  385  cd /boot/
+  386  ls
+  387  sudo reboot
+  388  cd /boot/
+  389  ls
+  390  mkdir dtb
+  391  sudo mkdir dtb
+  392  ls
+  393  sudo mv *.dtb dtb
+  394  ls
+  395  cd dtb/
+  396  ls
+  397  sudo cp tegra234-p3737-0000+p3701-0000-nv.dtb kernel_tegra234-p3737-0000+p3701-0000-nv.dtb
+  398  ls
+  399  sudo reboot
+  400  cd /boot/extlinux/
+  401  ls
+  402  vi extlinux.conf
+  403  sudo nano extlinux.conf
+  404  vi extlinux.conf
+  405  sudo vi extlinux.conf
+  406  cd ..
+  407  ls -la
+  408  sudo cp Image Image.backup
+  409  cd dtb/
+  410  ls -ls
+  411  reset
+  412  ls -l
+  413  sudo cp kernel_tegra234-p3737-0000+p3701-0000-nv.dtb kernel_tegra234-p3737-0000+p3701-0000-nv.dtb.backup
+  414  ls
+  415  sudo reboot
+  416  sudo mount /dev/mmcblk3p10 /mnt
+  417  sudo nano
+  418  sudo vi /mnt/grub/grub.cfg
+  419  ls -la /mnt/EFI/BOOT/
+  420  sudo vi /mnt/grub/grub.cfg
+  421  cd 
+  422  sudo umount /mnt
+  423  exit
+  424  uname -a
+  425  sudo reboot
+  426  sudo mount /dev/mmcblk3p10 /mnt
+  427  sudo vi /mnt/grub/grub.cfg
+  428  sudo umount /mnt
+  429  cd /boot/extlinux/
+  430  l
+  431  cat extlinux.conf
+  432  cd /sys/firmware/
+  433  ls -la
+  434  cd devicetree/
+  435  ls -la
+  436  cd base/
+  437  ls -la
+  438  cat model
+  439  cat name 
+  440  cat compatible 
+  441  cat serial
+  442  cat serial-number 
+  443  ls -l /sys/firmware/devicetree/base
+  444  /dts-v1/;
+  445  / {
+  446  };
+  
+  
+  
+  
+  
+  
+  
+  447  sudo mount /dev/mmcblk3p10 /mnt
+  448  strings /mnt/EFI/BOOT/BOOTAA64.efi 
+  449  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i dtb
+  450  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i fdt
+  451  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i fdti
+  452  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i fdto
+  453  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i overl
+  454  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i overlay
+  455  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i fdt
+  456  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i ovrelay
+  457  strings /mnt/EFI/BOOT/BOOTAA64.efi |grep -i overlay
+  458  sudo umount /mnt
+  459  uname -a
+  460  sudo reboot
+  461  cd /
+  462  cd tftpboot
+  463  cd boot/
+  464  ls -l
+  465  cd dtb/
+  466  ls -l
+  467  cd ..
+  468  cdd
+  469  cd
+  470  cd /home/nvidia/
+  471  ls -l
+  472  cd  jiajia/
+  473  ls -l
+  474  cd
+  475  cd /boot/
+  476  ls -l
+  477  cd dtb
+  478  ls -l
+  479  cd
+  480  history
+  
+  ##############################################################################################################################################################
+  
+  
+ jiajia@zjj: 
+ 
+  
+ 1605  ssh-copy-id -i id_rsa jiajia@10.162.12.139
+ 1606  cd .
+ 1607  cd 
+ 1608  sudo nano /etc/hosts
+ 1609  cat /etc/hosts
+ 1610  ssh jiajia@frodo
+ 1611  ssh jiajia@10.162.12.148
+ 1612  cd ~/.ssh
+ 1613  ls
+ 1614  ssh-copy-id jiajia@10.162.12.148 -i id_rsa.pub 
+ 1615  ssh-copy-id -i id_rsa.pub jiajia@10.162.12.148 
+ 1616  "ssh 'jiajia@10.162.12.148'"
+ 1617  ssh 'jiajia@10.162.12.148'
+ 1618  ssh Nvidia@frodo
+ 1619  ssh Nvidia@sam
+ 1620  ssh jiajia@sam
+ 1621  ssh Nvidia@192.168.1.58
+ 1622  ping 192.168.1.58
+ 1623  sudo apt update
+ 1624  sudo apt install apt-transport-https wget
+ 1625  wget -O- https://app.eduvpn.org/linux/v4/deb/app+linux@eduvpn.org.asc | gpg --dearmor | sudo tee /usr/share/keyrings/eduvpn-v4.gpg >/dev/null
+ 1626  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/eduvpn-v4.gpg] https://app.eduvpn.org/linux/v4/deb/ focal main" | sudo tee /etc/apt/sources.list.d/eduvpn-v4.list
+ 1627  sudo apt update
+ 1628  sudo apt install eduvpn-client
+ 1629  cd Desktop/MA/
+ 1630  touch materials and link.txt
+ 1631  ssh jiajia@sam
+ 1632  lsb_release -a
+ 1633  ssh jiajia@sam
+ 1634  ssl jiajia@sam
+ 1635  ssh jiajia@sam
+ 1636  jiajia@sam
+ 1637  ssh jiajia@sam
+ 1638  uname -m
+ 1639  sudo apt install gcc make gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+ 1640  sudo apt install gcc make gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu make
+ 1641  vi helloworld.c
+ 1642  gcc helloworld.c 
+ 1643  gcc helloworld.c -o helloworld-x86_64
+ 1644  file helloworld-x86_64
+ 1645  ./helloworld-x86_64 
+ 1646  aarch64-linux-gnu-gcc helloworld.c -o helloworld-aarch64
+ 1647  file helloworld-*
+ 1648  scp helloworld-aarch64 jiajia@sam:/jiajia/test/
+ 1649  scp helloworld-aarch64 jiajia@sam:/home/jiajia/
+ 1650  mkdir LinuxKernel
+ 1651  cd LinuxKernel/
+ 1652  git clone https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v2.0/sources/public_sources.tbz2
+ 1653  uname -a
+ 1654  ls
+ 1655  tar -xjf public_sources.tbz2
+ 1656  ls
+ 1657  cd Linux_for_Tegra/source/public
+ 1658  cd Linux_for_Tegra/source/
+ 1659  ls
+ 1660  tar –xjf kernel_src.tbz2
+ 1661  tar -xjf kernel_src.tbz2
+ 1662  ls
+ 1663  sudo apt install build-essential bc
+ 1664  cd
+ 1665  mkdir $HOME/l4t-gcc
+ 1666  cd l4t-gcc/
+ 1667  tar xf
+ 1668  ls
+ 1669  tar xf
+ 1670  tar xf $HOME/Downloads/aarch64--glibc--stable-2022.08-1.tar.bz2
+ 1671  export CROSS_COMPILE=$HOME/l4t-gcc/bin/aarch64-buildroot-linux-gnu-
+ 1672  export CROSS_COMPILE_AARCH64_PATH=$HOME/l4t-gcc
+ 1673  export CROSS_COMPILE_AARCH64_PATH=
+ 1674  export CROSS_COMPILE_AARCH64=/bin/aarch64-buildroot-linux-gnu-
+ 1675  ls
+ 1676  cd
+ 1677  cd LinuxKernel/
+ 1678  ls
+ 1679  cd Linux_for_Tegra/source/kernel/
+ 1680  cd ..
+ 1681  mkdir kernel_out
+ 1682  cd kernel_out/
+ 1683  cd ..
+ 1684  ./nvbuild.sh -o $PWD/kernel_out
+ 1685  cd
+ 1686  echo $CROSS_COMPILE_AARCH64_PATH
+ 1687  echo $CROSS_COMPILE_AARCH64
+ 1688  export CROSS_COMPILE_AARCH64_PATH=$HOME/l4t-gcc
+ 1689  echo $CROSS_COMPILE_AARCH64_PATH
+ 1690  cd LinuxKernel/Linux_for_Tegra/source/kernel/
+ 1691  ls
+ 1692  cd kernel-jammy-src/
+ 1693  ./nvbuild.sh -o $PWD/kernel_out
+ 1694  cd../..
+ 1695  cd ../..
+ 1696  find ~/LinuxKernel/Linux_for_Tegra/source/ -name "nvbuild.sh"
+ 1697  ./nvbuild.sh -o $PWD/kernel_out
+ 1698  cd
+ 1699  ls $HOME/l4t-gcc/bin
+ 1700  echo $CROSS_COMPILE_AARCH64_PATH
+ 1701  cd LinuxKernel/Linux_for_Tegra/source/
+ 1702  ./nvbuild.sh -o $PWD/kernel_out
+ 1703  export CROSS_COMPILE_AARCH64_PATH=\$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/
+ 1704  export CROSS_COMPILE_AARCH64=${CROSS_COMPILE_AARCH64_PATH}/bin/aarch64-buildroot-linux-gnu-
+ 1705  ./nvbuild.sh -o $PWD/kernel_out
+ 1706  export CROSS_COMPILE_AARCH64_PATH=
+ 1707  ./nvbuild.sh -o $PWD/kernel_out
+ 1708  export CROSS_COMPILE_AARCH64_PATH=$HOME/l4t-gcc
+ 1709  export CROSS_COMPILE_AARCH64=${CROSS_COMPILE_AARCH64_PATH}/bin/aarch64-buildroot-linux-gnu-
+ 1710  ./nvbuild.sh -o $PWD/kernel_out
+ 1711  sudo apt-get update
+ 1712  sudo apt install build-essential bc
+ 1713  which flex
+ 1714  sudo apt-get install flex bison build-essential libssl-dev libncurses5-dev bc
+ 1715  ./nvbuild.sh -o $PWD/kernel_out
+ 1716  ./kernel-5.10/scripts/rt-patch.sh apply-patches
+ 1717  find ~/LinuxKernel/Linux_for_Tegra/source/ -name "rt-patch.sh"
+ 1718  find ~/LinuxKernel/Linux_for_Tegra/source/ -name "nvbuild.sh"
+ 1719  cd kernel
+ 1720  cd kernel-jammy-src/
+ 1721  find ~/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/ -name "rt-patch.sh"
+ 1722  cd ../../..
+ 1723  find ~/LinuxKernel/Linux_for_Tegra/ -name "rt-patch.sh"
+ 1724  find ~/LinuxKernel/Linux_for_Tegra/source/ -name "rt-patch.sh"
+ 1725  cd source/
+ 1726  cd ..
+ 1727  find /path/to/extracted/files -name "kernel-5.10"
+ 1728  find /LinuxKernel/Linux_for_Tegra -name "kernel-5.10"
+ 1729  find /LinuxKernel/Linux_for_Tegra/source -name "kernel-5.10"
+ 1730  find /source -name "kernel-5.10"
+ 1731  find /source/ -name "kernel-5.10"
+ 1732  cd source/
+ 1733  ./generic_rt_build.sh enable
+ 1734  ./nvbuild.sh -o $PWD/kernel_out
+ 1735  ./generic_rt_build.sh enable
+ 1736  ./nvbuild.sh -o $PWD/kernel_out
+ 1737  ./generic_rt_build.sh enable
+ 1738  tar -xjf atf_src.tbz2 -C atf_and_optee/
+ 1739  tar -xjf nvidia-jetson-optee-source.tbz2 -C atf_and_optee/
+ 1740  export UEFI_STMM_PATH=$OUT/JP_6/Linux_for_Tegra/bootloader/standalonemm_optee_t234.bin
+ 1741  echo UEFI_STMM_PATH
+ 1742  echo $UEFI_STMM_PATH 
+ 1743  ./nvbuild.sh -o $PWD/kernel_out
+ 1744  find /home/jiajia/LinuxKernel/Linux_for_Tegra/source -type d -name "nvethernetrm"
+ 1745  cd atf_and_optee/
+ 1746  find /home/jiajia/LinuxKernel/Linux_for_Tegra/source/atf_and_optee -type d -name "nvethernetrm"
+ 1747  cd 
+ 1748  cd l4t-gcc/
+ 1749  tar xf $HOME/Downloads/aarch64--glibc--stable-2022.08-1.tar.bz2
+ 1750  export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1751  cd
+ 1752  cd LinuxKernel/
+ 1753  tar xf public_sources.tbz2 -C /home/jiajia/LinuxKernel/Linux_for_Tegra/..
+ 1754  tar xf public_sources.tbz2 -C /home/jiajia/LinuxKernel/Linux_for_Tegra/
+ 1755  tar xf public_sources.tbz2 -C /home/jiajia/LinuxKernel/Linux_for_Tegra
+ 1756  tar xf public_sources.tbz2
+ 1757  cd
+ 1758  mkdir linux
+ 1759  cd linux/
+ 1760  ./source_sync.sh
+ 1761  cd 
+ 1762  cd LinuxKernel/
+ 1763  cd Linux_for_Tegra/source/
+ 1764  tar xf kernel_src.tbz2
+ 1765  tar xf kernel_oot_modules_src.tbz2
+ 1766  tar xf nvidia_kernel_display_driver_source.tbz2
+ 1767  ./generic_rt_build.sh "enable"
+ 1768  export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1769  export INSTALL_MOD_PATH=<install-path>/Linux_for_Tegra/rootfs/
+ 1770  export INSTALL_MOD_PATH=/home/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1771  sudo -E make install -C kernel
+ 1772  export INSTALL_MOD_PATH=/home/LinuxKernel/Linux_for_Tegra/rootfs
+ 1773  sudo -E make install -C kernel
+ 1774  export INSTALL_MOD_PATH=$HOME/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1775  sudo -E make install -C kernel
+ 1776  export INSTALL_MOD_PATH=$HOME/LinuxKernel/Linux_for_Tegra/rootfs
+ 1777  sudo -E make install -C kernel
+ 1778  cd ..
+ 1779  mkdir -p <install-path>/Linux_for_Tegra/rootfs/lib/modules/<kernel-version>
+ 1780  mkdir -p $HOME/LinuxKernel/Linux_for_Tegra/rootfs/lib/modules/jammy-r36.2
+ 1781  export INSTALL_MOD_PATH=$HOME/LinuxKernel/Linux_for_Tegra/rootfs
+ 1782  sudo -E make install -C kernel
+ 1783  export INSTALL_MOD_PATH=$HOME/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1784  sudo -E make install -C kernel
+ 1785  export INSTALL_MOD_PATH=$Home/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1786  sudo -E make install -C kernel
+ 1787  export INSTALL_MOD_PATH=$HOME/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1788  cd source/
+ 1789  sudo -E make install -C kernel
+ 1790  export INSTALL_MOD_PATH=$Home/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1791  sudo -E make install -C kernel
+ 1792  export INSTALL_MOD_PATH=home/jiajia/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1793  sudo -E make install -C kernel
+ 1794  export INSTALL_MOD_PATH=home/jiajia/LinuxKernel/Linux_for_Tegra/rootfs
+ 1795  sudo -E make install -C kernel
+ 1796  export INSTALL_MOD_PATH=$Home/LinuxKernel/Linux_for_Tegra/rootfs
+ 1797  sudo -E make install -C kernel
+ 1798  mkdir -p $HOME/LinuxKernel/Linux_for_Tegra/rootfs/boot/
+ 1799  export INSTALL_MOD_PATH=$Home/LinuxKernel/Linux_for_Tegra/rootfs/
+ 1800  sudo -E make install -C kernel
+ 1801  export INSTALL_MOD_PATH=$Home/LinuxKernel/Linux_for_Tegra/rootfs
+ 1802  sudo -E make install -C kernel
+ 1803  export INSTALL_MOD_PATH=/home/jiajia/LinuxKernel/Linux_for_Tegra/rootfs
+ 1804  sudo -E make install -C kernel
+ 1805  cp kernel/kernel-jammy-src/arch/arm64/boot/Image   /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel/Image
+ 1806  touch /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel/Image
+ 1807  cd ..
+ 1808  touch /kernel
+ 1809  touch kernel/
+ 1810  mkdir -p /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel/
+ 1811  cd source/
+ 1812  export IGNORE_PREEMPT_RT_PRESENCE=1
+ 1813  export CROSS_COMPILE=/home/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1814  export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+ 1815  make modules
+ 1816  export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1817  make modules
+ 1818  sudo -E make modules_install
+ 1819  make dtbs
+ 1820  cp nvidia-oot/device-tree/platform/generic-dts/dtbs/*      /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel/dtb/
+ 1821  cp nvidia-oot/device-tree/platform/generic-dts/dtbs/*      $HOME/LinuxKernel/Linux_for_Tegra/kernel/dtb/
+ 1822  cp nvidia-oot/device-tree/platform/generic-dts/dtbs/*      /Home/LinuxKernel/Linux_for_Tegra/kernel/dtb/
+ 1823  mkdir -p /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel/dtb/
+ 1824  cp nvidia-oot/device-tree/platform/generic-dts/dtbs/*      /Home/LinuxKernel/Linux_for_Tegra/kernel/dtb/
+ 1825  cp nvidia-oot/device-tree/platform/generic-dts/dtbs/*      /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel/dtb/
+ 1826  ls
+ 1827  cd ..
+ 1828  ls
+ 1829  cd source/
+ 1830  ls
+ 1831  cd kernel/
+ 1832  ls
+ 1833  cd kernel-jammy-src/
+ 1834  ls
+ 1835  ls $KERNEL_HEADERS/.config
+ 1836  cd
+ 1837  scp /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/ jiajia@sam:/home/jiajia/
+ 1838  ls $HOME/LinuxKernel/Linux_for_Tegra/rootfs/lib/modules/
+ 1839  scp -r $HOME/LinuxKernel/Linux_for_Tegra/rootfs/lib/modules/5.15.122-rt-tegra jiajia@sam:/home/jiajia/
+ 1840  cd kernel/
+ 1841  cd LinuxKernel/Linux_for_Tegra/kernel/
+ 1842  ls
+ 1843  cd dtb/
+ 1844  ls
+ 1845  ls -l /tftpboot
+ 1846  ssh jiajia@sam
+ 1847  scp $HOME/LinuxKernel/Linux_for_Tegra/kernel/dtb/*.dtb jiajia@sam:/home/jiajia/
+ 1848  ssh jiajia@sam
+ 1849  ssh sam
+ 1850  ssh jiajia@sam
+ 1851  ls -l /tftpboot
+ 1852  ssh jiajia@sam
+ 1853  cd /home/jiajia/LinuxKernel/Linux_for_Tegra/kernel
+ 1854  ls
+ 1855  scp Image jiajia@sam:/tftpboot/orin/Image
+ 1856  cd dtb
+ 1857  ls -l
+ 1858  scp tegra234-p3737-0000+p3701-0000.dtb
+ 1859  scp tegra234-p3737-0000+p3701-0000.dtb jiajia@sam:/tftpboot/orin/fdt
+ 1860  ls -l tegra234-p3737-0000+p3701-000*
+ 1861  scp tegra234-p3737-0000+p3701-0000-nv.dtb jiajia@sam:/tftpboot/orin/fdt
+ 1862  ls
+ 1863  ssh jiajia@sam
+ 1864  ssh jiajia@sam
+ 1865  ssh sam
+ 1866  ssh sam
+ 1867  ssh sam
+ 1868  ls -lha
+ 1869  chown -R jiajia:jiajia 5.15.122-rt-tegra/
+ 1870  sudo chown -R jiajia:jiajia 5.15.122-rt-tegra/
+ 1871  cd 5.15.122-rt-tegra/
+ 1872  ll
+ 1873  cd kernel/
+ 1874  ll
+ 1875  cd arch/arm64/
+ 1876  ll
+ 1877  la
+ 1878  cd ../../../
+ 1879  ll
+ 1880  ..
+ 1881  cd ..
+ 1882  ll
+ 1883  cd boot/
+ 1884  ll
+ 1885  ls -lha
+ 1886  ll
+ 1887  cd
+ 1888  touch up_to_orin.sh
+ 1889  ssh sam
+ 1890  ssh sam
+ 1891  cd /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia 
+ 1892  code .
+ 1893  cd
+ 1894  cd home
+ 1895  ls
+ 1896  cd LinuxKernel/Linux_for_Tegra/source/
+ 1897  make dtbs
+ 1898  sudo apt-get install device-tree-compiler
+ 1899  make dtbs
+ 1900  dtc --version
+ 1901  make dtbs
+ 1902  sudo apt install build-essential bc
+ 1903  echo $CROSS_COMPILE
+ 1904  export CROSS_COMPILE=/home/jiajia/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1905  echo $CROSS_COMPILE
+ 1906  export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+ 1907  echo $KERNEL_HEADERS
+ 1908  make dtbs
+ 1909  dtc -I dtb -O dts -o /tmp/verified.dts $PWD/arch/arm64/boot/dts/tegra234-p3701-0000.dtb
+ 1910  dtc -I dtb -O dts -o /tmp/verified.dts $PWD/arch/arm64/boot/dts/tegra234-p3737-0000+p3701-0000.dtb
+ 1911  dtc -I dtb -O dts -o /tmp/verified.dts /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dtb
+ 1912  grep -A 3 "jiajia" /tmp/verified.dts
+ 1913  cat /tmp/verified.dts
+ 1914  grep -A 3 "vdd_ao_" /tmp/verified.dts
+ 1915  grep -A 3 "ein test" /tmp/verified.dts
+ 1916  grep -A 3 "Das" /tmp/verified.dts
+ 1917  grep -A 3 "Jiajia" /tmp/verified.dts
+ 1918  grep -A 3 "jiajia" /tmp/verified.dts
+ 1919  grep -A 3 "hello" /tmp/verified.dts
+ 1920  cat /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia/ tegra234-p3737-0000+p3701-0000.dts
+ 1921  cat /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+ 1922  grep -A 3 "hello" /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+ 1923  grep -A 3 "jiajia" /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+ 1924  grep -A 3 "hello" /tmp/verified.dts
+ 1925  export CROSS_COMPILE=/home/jiajia/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1926  export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+ 1927  make dtbs
+ 1928  ls -l
+ 1929  ls -lart
+ 1930  make dtbs
+ 1931  cd nvidia-oot/
+ 1932  ls -l
+ 1933  cd device-tree/
+ 1934  ls -l
+ 1935  cd platform/
+ 1936  ls -l
+ 1937  cd generic-dts/
+ 1938  ls -l
+ 1939  cd dtbs/
+ 1940  ls -l
+ 1941  strings tegra234-p3768-0000+p3767-0000.dtb|grep "jiajia"
+ 1942  strings tegra234-p3737-0000+p3701-0000.dtb|grep "jiajia"
+ 1943  cd ..
+ 1944  cd ../../../..
+ 1945  cd ..
+ 1946  find | grep "tegra234-p3737-0000+p3701-0000.dts"
+ 1947  cd source/
+ 1948  make dtbs
+ 1949  cd /LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+ 1950  cd ~/LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+ 1951  strings tegra234-p3737-0000+p3701-0000.dtb|grep "jiajia"
+ 1952  strings tegra234-p3737-0000+p3701-0000.dts|grep "jiajia"
+ 1953  strings tegra234-p3737-0000+p3701-0000.dts|grep "include"
+ 1954  strings tegra234-p3737-0000+p3701-0000.dts|grep "{"
+ 1955  strings tegra234-p3737-0000+p3701-0000.dtb|grep "{"
+ 1956  strings tegra234-p3737-0000+p3701-0000.dtb|grep "b"
+ 1957  strings /bin/bash
+ 1958  strings /bin/true
+ 1959  strings tegra234-p3737-0000+p3701-0000.dtb|grep "jiajia"
+ 1960  cd ../../../..
+ 1961  cd ../..
+ 1962  stringscd ~/LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+ 1963  cd ~/LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+ 1964  strings tegra234-p3737-0000+p3701-0000-nv.dtb|grep "jiajia"
+ 1965  strings tegra234-p3737-0000+p3701-0000-nv.dtb|grep "test
+ 1966  "
+ 1967  strings tegra234-p3737-0000+p3701-0000-nv.dtb|grep "test"
+ 1968  cd
+ 1969  ls -l
+ 1970  chmod +x up_to_orin.sh 
+ 1971  ./up_to_orin.sh 
+ 1972  ssh sam
+ 1973  cd cd ~/LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+ 1974  cd ~/LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+ 1975  strings tegra234-p3737-0000+p3701-0000.dtb|grep "jiajia"
+ 1976  strings tegra234-p3737-0000+p3701-0000.dtb|grep "hello"
+ 1977  strings tegra234-p3737-0000+p3701-0000.dtb|grep "test"
+ 1978  cd
+ 1979  ssh sam
+ 1980  sudo apt-get install discord
+ 1981  snap install discord
+ 1982  echo $CROSS_COMPILE
+ 1983  cd ~/LinuxKernel/Linux_for_Tegra/source/
+ 1984  make dtbs
+ 1985  export CROSS_COMPILE=/home/jiajia/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+ 1986  export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+ 1987  make dtbs
+ 1988  history
+ 1989  cd jiajia@zjj:~/LinuxKernel/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/
+ 1990  cd jiajia@zjj:~/LinuxKernel/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public
+ 1991  cd ~/LinuxKernel/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/
+ 1992  ls
+ 1993  code .
+ 1994  cd
+ 1995  cd /home/jiajia/LinuxKernel/Linux_for_Tegra/source/kernel/kernel-jammy-src
+ 1996  ls
+ 1997  ls -la
+ 1998  export CROSS_COMPILE_AARCH64_PATH=/home/l4t-gcc 
+ 1999  export CROSS_COMPILE_AARCH64=$CROSS_COMPILE_AARCH64_PATH/bin/aarch64-buildroot-linux-gnu-`
+ 2000  make oldconfig ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- 
+ 2001  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- 
+ 2002  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4
+ 2003  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 clean
+ 2004  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 menuconfig
+ 2005  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 
+ 2006  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 clean
+ 2007  cd
+
+  
+ ##############################################################################################################################
+ 
+  
+  
+  
+  
+

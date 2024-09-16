@@ -1,0 +1,163 @@
+
+# 从下载 linux 源码开始，configure 一个新的 Linux Kernel
+
+  Linux内核源码网址: https://developer.nvidia.com/embedded/jetson-linux
+  Sources 那一栏里面，第一个(Driver Package(BSP) Sources) == 
+
+
+
+	- Linux_for_Tegra: 是为了存入解压后的 public_sources.tbz2 创建的, 目前里面只有一个 source 文件夹
+  		- source 
+  
+
+
+
+		This extracts the kernel source to the kernel/ subdirectory, and the NVIDIA out-of-tree kernel modules sources to the current directory.
+  		------------------------------------------------------------------------------------------------------------------------------------------------
+		tar xf public_sources.tbz2
+		
+		
+		cd ~/Desktop/MA/orin/Linux_for_Tegra/source 		进入 source 文件夹，此时里面没有其他文件夹
+
+		$ tar xf kernel_src.tbz2							解压缩后，source 下面出现 kernel 文件夹:
+													   			-里面存有内核源码 kernel-jammy-src 文件夹 (包含很多文件夹如 arch,block...) 和一个makefile
+
+		$ tar xf kernel_oot_modules_src.tbz2				出现 hardware, hwpm, nvethernetrm， nvgpu, nvidia-oot 文件夹
+
+		$ tar xf nvidia_kernel_display_driver_source.tbz2	出现 nvdisplay 文件夹
+
+		------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		
+	 !!!!!  所有在 source 文件夹里需要设置的export:
+		——————————————————————————————————————
+		
+		export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+		export INSTALL_MOD_PATH=/home/jiajia/Desktop/MA/orin/Linux_for_Tegra/rootfs/
+		export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+		
+		
+		
+		
+		-> 开始 build
+		
+		./generic_rt_build.sh "enable"		 (build 实时 kernel)
+		make -C kernel
+		
+		
+		sudo -E make install -C kernel		（build NVIDIA in-Tree Modules）
+		
+		
+		export IGNORE_PREEMPT_RT_PRESENCE=1		 (build the NVIDIA Out-of-Tree Modules)
+		make modules
+		sudo -E make modules_install
+		
+		
+		make dtbs					 (Building the DTBs)
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+		Building the Jetson Linux Kernel
+		————————————————————————————————
+
+		cd ~/Desktop/MA/orin/Linux_for_Tegra/source
+
+		$ ./generic_rt_build.sh "enable"		build 实时 kernel
+
+		$ export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+
+		$ make -C kernel    					完成后显示: "Kernel Image: /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/Image"
+
+
+
+		## rootfs 文件夹里面是 module 
+		Building the NVIDIA in-Tree Modules (在 source 文件夹下创建 rootfs, 并把 build 完的 Image 复制一份到这里)
+		———————————————————————————————————
+
+		$ export INSTALL_MOD_PATH=/home/jiajia/Desktop/MA/orin/Linux_for_Tegra/rootfs/
+
+		$ sudo -E make install -C kernel
+		
+		$ cp kernel/kernel-jammy-src/arch/arm64/boot/Image /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/kernel/Image
+
+
+
+
+		
+		Building the NVIDIA Out-of-Tree Modules (在 /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/ 新建的 rootfs 文件夹下添加一些模组)
+		———————————————————————————————————————
+
+		export IGNORE_PREEMPT_RT_PRESENCE=1
+
+		$ export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+		$ export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+		$ make modules
+
+		$ export INSTALL_MOD_PATH=/home/jiajia/Desktop/MA/orin/Linux_for_Tegra/rootfs/
+		$ sudo -E make modules_install
+
+
+
+
+
+
+
+
+		Building the DTBs (把 build 好的 DTBs 复制到 /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/kernel 新建的 dtb 文件夹里） 
+		—————————————————
+
+		$ cd /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/source
+
+		$ export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+		$ export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+		$ make dtbs
+		
+		Run the following commands to install:
+
+		$ cp nvidia-oot/device-tree/platform/generic-dts/dtbs/* /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/kernel/dtb/
+
+
+
+		------------------------------------------------------------------------------------------------------------
+		生成dtb文件的 dts 源文件在:
+
+		/home/jiajia/Desktop/MA/orin/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/tegra234-p3737-0000+p3701-0000.dts
+
+
+		compile之后生成的是:
+
+		tegra234-p3737-0000+p3701-0000-nv.dtb 	
+		
+		存放在: 
+		/home/jiajia/Desktop/MA/orin/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
+
+		------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

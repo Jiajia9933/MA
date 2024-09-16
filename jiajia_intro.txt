@@ -1,0 +1,133 @@
+sudo cat /proc/iomem
+
+* Beispiel von x86 Alex Laptop
+09f0d000-a44f2017 : System RAM
+a44f2018-a44ff657 : System RAM
+a44ff658-a4500017 : System RAM
+-> freie Wahl
+  1000'0000-1800'0000  32 MB für Jailhouse
+
+
+* Beispiel RK3588
+	reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		jailhouse@a800000  {
+			no-map;
+			reg = <0x0 0x0a800000 0x0 0x05800000>;
+		};
+	};
+
+-> freie Wahl:
+  0a80'0000 -- 1000'0000  92 MB für Jailhouse
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+* Root Cell config:
+
+		.hypervisor_memory = {
+			.phys_start = 0x0a800000, // gleiche Startadresse
+			.size = 0x00200000, // 2 MB reichen!
+		},
+
+		.debug_console = {
+			/* uarti -> likely /dev/tty.orin.1 */
+			.address = 0x031d0000,
+			.size = 0x00010000,
+			.type = JAILHOUSE_CON_TYPE_PL011,		nvidia@orin:~$ sudo dmesg | grep -i serial
+			.flags = JAILHOUSE_CON_ACCESS_MMIO |
+				 JAILHOUSE_CON_REGDIST_4,
+		},
+
+
+		.platform_info = {
+			.pci_mmconfig_base = 0xf6400000,
+			// erste "reserved" Lücke aus dem Handbuch, min. 2 MB
+
+			.gicd_base = 0xfe600000, // anpassen auf 0x0f400000
+			.gicr_base = 0xfe680000, // anpassen auf 0x0f440000
+
+
+			.memguard = {
+				.num_irqs = 32 + 480, // hier 480 anpassen, vermutlich 960
+				                      // (Linux kernel printed: "found 480 SPI interrupts" auf RK)
+				.hv_timer = 26,
+				.num_pmu_irq = 12, // hier 12
+				/* One PMU irq per CPU */
+				.pmu_cpu_irq = {
+					23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, // 12x "23"
+				},
+
+	.cpus = {
+		0b111111111111,
+	},
+
+---------------------
+
+			.vpci_irq_base = 456 - 32, // erster Reserved interrupt aus Handbuch
+
+	.irqchips = {
+		/* GIC */ {
+			.address = 0xfe600000, // adresse anpassen auf 0x0f400000
+			// einträge für 960/992 interrupts eintragen
+			// 8 "zeilen"
+
+---------------------
+
+	// anzahl PCI controller zählen
+
+		.platform_info = {
+			.pci_domain = 5,   // <<<<< müssen gleich sein
+
+	.pci_devices = {
+		/* 00:00.0 (demo) */ {
+			.type = JAILHOUSE_PCI_TYPE_IVSHMEM,
+			.domain = 5,       // <<<< müssen gleich sein
+
+---------------------------------------------------------------------------
+
+*  0x00000000 --  0x0a7fffff //       RAM vor Jailhouse reserved memory
+   0x0a800000 --  0x0a9fffff //  2 MB Jailhouse hypervisor
+   0x0aa00000 --  0x0affffff //  6 MB shared memory config
+   0x0b000000 --  0x0fffffff // 80 MB für Cells
+*  0x10000000 --  0xefffffff //       RAM nach Jailhouse reserved memory
+*  0xf0000000 --  0xf63fffff //       I/O vor Jailhouse virtual PCI (bis Reserved)
+*  0xf6800000 --  0xffffffff //       I/O nach Jailhouse virtual PCI
+* 0x100000000 -- 0x80fffffff //       "high" memory above 4 GB RAM
+* 0x900000000 -- 0xa40ffffff //       I/O für PCI
+
+
+1.		/* 6 MB memory region from 0x0aa00000 to 0x0b000000 for communication */
+		/* IVSHMEM shared memory regions for 00:00.0 (demo) */
+		/* 4 regions for 2 peers */
+		/* state table, read-only for all */ {
+			.phys_start = 0x0aa00000, << adressen anpassen
+			.virt_start = 0x0aa00000, << adressen anpassen
+			.size = 0x10000,
+			.flags = JAILHOUSE_MEM_READ,
+		...
+
+2.		/* IVSHMEM shared memory regions for 00:01.0 (networking) */
+		JAILHOUSE_SHMEM_NET_REGIONS(0x0ab00000, 0), <<< ebenfalls anpassen, +1MB höher
+		...
+
+3.		/* 80 MB memory region from 0x0b000000 to 0x10000000 for cells */ {
+			.phys_start = 0x0b000000, // adressen anpassen ...
+			.virt_start = 0x0b000000,
+			.size = 0x05000000,
+			.flags = JAILHOUSE_MEM_READ | JAILHOUSE_MEM_WRITE,
+		},
+
+
+/// jailhouse config:
+	#define CONFIG_MACH_RK3588 1
+// setzen

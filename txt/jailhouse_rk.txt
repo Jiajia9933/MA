@@ -1,0 +1,600 @@
+# jailhouse_rk.txt
+#
+# Jailhouse for Rockchip RK35xx
+#
+# azuepke, 2024-08-12: initial for RK3566
+# azuepke, 2024-08-23: general update for RK3568
+# azuepke, 2024-08-25: RK3588 + summary
+
+
+General Note
+=============
+
+The following instruction explain how to get Jailhouse to work on various
+Rockchip-based SoCs supporting the RK3566, RK3568 and RK3588 family.
+The general steps are as follows:
+- compile a Linux kernel with extra patches for Linux
+- modify a DTB with extra settings for Jailhouse
+- compile the Jailhouse hypervisor for the specific boards
+- load the Jailhouse hypervisor
+- activate the Jailhouse root cell
+- start a guest cell with a second Linux kernel on cores 2 and 3
+- configure a network connection between the two Linux instances
+
+We use the U-Boot bootloader to download the Linux kernel over the network
+using the TFTP protocol, and then mount the root file system using NFS.
+This allows us to get rid of the need to flash the boards all the time.
+
+
+Disclaimer
+===========
+
+The following instructions are specific to the remote target setup
+at the Chair of Cyber-Physical System in Production Engineering at TUM.
+The example code here directly apply for Alex's setup (Ubuntu 22.04)
+and the RK3566 board at Sam.
+
+You need to adapt the settings for your accounts accordingly!
+
+
+Board Matrix
+=============
+
+- rk3566 @ sam -- Lubancat Zero N
+  https://doc.embedfire.com/linux/rk356x/quick_start/en/latest/quick_start/lubancat/lubancat-zero.html
+  Kernels: 6.1, 6.6, 6.11-rc4
+  DTB: rk3566-lubancat-0.dtb
+  Serials: uart2, uart8
+
+- yy3568 @ frodo -- Youyeetoo FHL-YY3568
+  https://www.youyeetoo.com/products/yy3568-rk3568-single-board-computer?VariantsId=11100
+  Kernels: 6.1, 6.6, 6.11-rc4
+  DTB: rk3568-evb1-v10.dtb
+  Serials: uart2, uart8
+
+- itx3588 @ sam -- Firefly ITX 3588J
+  https://en.t-firefly.com/product/industry/itx3588j
+  Kernels: 6.11-rc4
+  DTB: rk3588-firefly-itx-3588j.dtb
+  Serials: uart2, uart0
+
+- rock5b @ sam -- Raxda Rock 5B
+  https://radxa.com/products/rock5/5b/
+  Kernels: 6.11-rc4
+  DTB: rk3588-rock-5b.dtb
+  Serials: uart2
+
+- orangepi @ frodo -- Orange Pi 5 Plus
+  http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5-plus.html
+  Kernels: 6.11-rc4
+  DTB: rk3588-orangepi-5-plus.dtb
+  Serials: uart2
+
+We will use the mainline Linux kernel (https://kernel.org) for these boards.
+The Linux kernel supports the RK3588 family from kernel version 6.10 on.
+
+On these boards, the main Linux uses uart2 (which is usually the first serial
+console connected to Frodo/Sam), and the output of the guest cells will
+happen on the other serial, e.g. uart8 (RK356x bords) or uart0 (itx3588).
+
+Note that the rock5b and the orangepi only have a single serial console yet.
+We could connect another serial (e.g. uart4) later.
+But also, both boards might have issues with the network and NFS might not work.
+
+
+Prepare NFS rootfs on Frodo/Sam
+================================
+
+Goal: exported NFS root in ~/nfsroots/rk3568 or rk3588 on Frodo/Sam
+For this step, you need to ask Alex for help!
+
+  # login to Frodo/Sam
+
+  ssh azuepke@sam
+
+  # clone rootfs
+
+  mkdir ~/nfsroots
+  sudo cp -Rap /tftpboot/debian_nfsroot_arm64 ~/nfsroots/rk3568
+  sudo chown -R azuepke:azuepke ~/nfsroots/rk3568
+  rm -rf ~/nfsroots/rk3568/lib/modules/ ~/nfsroots/rk3568/lib/firmware/
+  mkdir -p ~/nfsroots/rk3568/lib/modules/ ~/nfsroots/rk3568/lib/firmware/
+
+  # enable autologin as root
+  
+
+    -ExecStart=-/sbin/agetty -o '-p -- \\u'   --keep-baud 115200,38400,9600 %I $TERM
+    +ExecStart=-/sbin/agetty --autologin root --keep-baud 115200,38400,9600 %I $TERM
+
+  # update symlink rootfs
+  cd /tftpboot
+  sudo rm 192.168.1.69
+  sudo ln -s /home/azuepke/nfsroots/rk3568 192.168.1.69
+  sudo /usr/sbin/exportfs -r
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prepare Repos
+==============
+
+The following steps are specific for Linux kernel 6.1.104 and the RK356x boards.
+Note that the following instructions assume that the various repos
+are checked out at the same directory level!
+
+  git clone https://github.com/Minervasys/jailhouse-documentation.git
+
+  git clone https://github.com/Minervasys/jailhouse.git
+
+  wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.104.tar.xz
+  tar xf linux-6.1.104.tar.xz
+  mv linux-6.1.104 linux-rk3568
+
+  mkdir build-rk3568
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Building the Linux kernel
+==========================
+
+We'll now prepare and configure the Linux kernel.
+We first apply various patches for Jailhouse and our board,
+copy a kernel config as starting point and then compile the kernel.
+
+  # important: always set these settings to set up the kernel build environment
+  # do this before doing anything else!
+
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-gnu-
+
+
+  # you need to do the following steps only once
+  # 1. create a git repo from the Linux kernel
+
+cd linux-rk3568
+git add .??* *
+git commit -m"import"
+
+  # 2. apply Jailhouse enabling patches to the Linux kernel
+
+  git am ../jailhouse-documentation/jailhouse-enabling-patches/6.1.y/*.patch
+
+  # 3. apply the board-specific patches for our boards
+
+  git am ../jailhouse-documentation/boards/rk3568/patches/*.patch
+
+  # 4. copy kernel config
+  # NOTE: the kernel config for RK3568 and RK3588 is the same,
+  # but RK3588 requires at least Kernel 6.10 to work
+
+cp ../jailhouse-documentation/boards/rk3568/configs/rk3568_jailhouse_defconfig .config
+
+  # Note: the default config (defconfig) is a good starting point as well.
+  # The provided config is just trimmed down to save memory for the guest cells.
+
+
+  # 5. configure the Linux kernel
+
+make oldconfig
+make menuconfig
+
+    # tweak as follows -- default configuration
+    - CONFIG_OF_OVERLAY # must be enabled
+    - CONFIG_KALLSYMS_ALL # enabled by default
+    - CONFIG_ARM64_VHE # not in kernel 6.1
+    
+    - CONFIG_VIRTUALIZATION # must be disabled
+    
+    - CONFIG_MODVERSIONS # disabled by default
+    
+    - CONFIG_DWC_XLGMAC # network driver! enable
+    - CONFIG_STMMAC_ETH # change hierarchy from module to enabled
+      - CONFIG_STMMAC_PLATFORM # enable
+      - CONFIG_DWMAC_DWC_QOS_ETH # enable	--
+      - CONFIG_DWMAC_ROCKCHIP # enable
+
+
+    # extra tweak for RK3588, apply manually after running "make menuconfig"
+    --- .config	2024-08-24 18:44:44.455521002 +0200
+    +++ .config	2024-08-24 20:46:04.233241213 +0200
+    @@ -6622,8 +6622,8 @@ CONFIG_ARM_GIC=y
+     CONFIG_ARM_GIC_MAX_NR=1
+     CONFIG_ARM_GIC_V2M=y
+     CONFIG_ARM_GIC_V3=y
+    -CONFIG_ARM_GIC_V3_ITS=y
+    -CONFIG_ARM_GIC_V3_ITS_PCI=y
+    +# CONFIG_ARM_GIC_V3_ITS is not set
+    +# CONFIG_ARM_GIC_V3_ITS_PCI is not set
+     CONFIG_IRQ_MSI_LIB=y
+     # CONFIG_AL_FIC is not set
+     # CONFIG_LAN966X_OIC is not set
+
+
+  # compile kernel
+  # You need to re-run the following steps each time you modify the kernel
+
+make -j$(nproc)
+
+
+  # copy generated kernel, DTB and kernel modules to Frodo/Sam
+  # NOTE: adapt the ofllowing for your specific boards and NFS directories
+
+scp arch/arm64/boot/Image arch/arm64/boot/dts/rockchip/rk3566-lubancat-0.dtb azuepke@sam:/tftpboot/rk3566/
+
+make INSTALL_MOD_PATH=../build-rk3568 modules_install
+rsync -ai ../build-rk3568/lib/modules/ azuepke@sam:nfsroots/rk3568/lib/modules/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+U-Boot Commands to Boot the new kernel
+=======================================
+
+On Frodo/Sam, connect to the first serial console of your board:
+
+  picocom -b 1500000 /dev/ttyUSB.rk3566.0
+
+Then interrupt the boot process in the U-Boot console:
+
+  Hit key to stop autoboot('CTRL+C'):  0
+  => <INTERRUPT>
+  => <INTERRUPT>
+  =>
+
+Copy & paste the following commands into the U-Boot console:
+
+  # this line is only for RK3566 and RK3568 boards:
+  setenv bootargs "earlycon=uart8250,mmio32,0xfe660000 console=ttyS2,1500000 root=/dev/nfs nfsroot=/tftpboot/%s,vers=3,sec=sys ip=dhcp rw rootwait nfsrootdebug clk_ignore_unused"
+
+  # this line is only for RK3588 boards:
+  setenv bootargs "earlycon=uart8250,mmio32,0xfeb50000 console=ttyS2,1500000 root=/dev/nfs nfsroot=/tftpboot/%s,vers=3,sec=sys ip=dhcp rw rootwait nfsrootdebug clk_ignore_unused"
+
+  # adapt kernel and DTB file names for your board
+  dhcp
+  tftp 0x00280000 rk3566/Image
+  tftp 0x0a000000 rk3566/rk3566-lubancat-0.dtb
+  fdt addr 0x0a000000
+  fdt resize
+  booti 0x00280000 - 0x0a000000
+
+Now you should have a Debian System running with NFS as root file system.
+The login name and passwort is root / root.
+You can also login with ssd from Frodo/Sam (type "root" as password):
+
+  ssh root@rk3566
+
+To reboot the system quickly, run:
+
+  reboot -f
+
+This skips the lengthy shutdown with systemd and is the fastest way to reset.
+
+
+Second Serial Console
+======================
+
+On Frodo/Sam, connect to the second serial console of your board.
+It's best if you do this in another window!
+
+  picocom -b 1500000 /dev/ttyUSB.rk3566.1
+
+The terminal should not show anything, and should not react to input.
+In the Linux console in the other picocom session, type:
+
+  stty -F /dev/ttyS0 1500000
+  echo "hello" > /dev/ttyS0
+
+And then you should see "hello" printed on the /dev/ttyUSB.rk3566.1 serial.
+
+Check the following to identify the specific serial device on the target:
+
+  dmesg | grep serial
+
+    fe660000.serial: ttyS2 at MMIO 0xfe660000 (irq = 29, base_baud = 1500000) is a 16550A
+    fe6c0000.serial: ttyS0 at MMIO 0xfe6c0000 (irq = 30, base_baud = 1500000) is a 16550A
+
+In our case, Linux provides uart8 as /dev/ttyS0.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Building the Jailhouse Hypervisor
+==================================
+
+We'll now build the Jailhouse hypervisor. Do this again on your computer.
+Use a fresh window / console for that.
+
+  # important: always set these settings to set up the kernel build environment
+  # do this before doing anything else!
+  #
+  # BIG FAT NOTE: the settings assume that the Linux kernel is checked out
+  # and build at the same directory level (otherwise, `pwd` will not work)
+
+cd ~/Desktop/MA/RK3566
+
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-gnu-
+export KDIR=`pwd`/linux-rk3566
+export DESTDIR=`pwd`/build-rk3566
+
+
+  # you need to do the following steps only once
+  # 1. switch to the right Jailhouse branch
+
+cd jailhouse
+git switch minerva/next
+
+
+  # 2. create a valid configuration for Jailhouse (do this only once)
+  # unfortunately, there is no better config system yet
+  # NOTE: the configuration works for all RK3566, RK3568 and RK3588 boards!
+
+rm -f include/jailhouse/config.h
+echo "#define CONFIG_MACH_RK3588 1" >> include/jailhouse/config.h
+echo "#define CONFIG_RK3568_GENERIC 1" >> include/jailhouse/config.h
+echo "#define CONFIG_ARM_GIC_V3 1" >> include/jailhouse/config.h
+echo "#define CONFIG_TRACE_ERROR 1" >> include/jailhouse/config.h
+echo "#define CONFIG_CRASH_CELL_ON_PANIC 1" >> include/jailhouse/config.h
+echo "#define CONFIG_DEBUG 1" >> include/jailhouse/config.h
+
+
+  # 3. check your cell configuration and guest cell DTB for our board
+  #
+  # for RK3566 and RK3568, check:
+  # - configs/arm64/rk3568.c
+  # - configs/arm64/rk3568-linux-demo.c
+  # - configs/arm64/dts/inmate-rk3568.dts
+  #
+  # for RK3588, the files are:
+  # - configs/arm64/rk3588.c
+  # - configs/arm64/rk3588-linux-demo.c
+  # - configs/arm64/dts/inmate-rk3588.dts
+  #
+  # See the comments in the specific example files.
+
+
+  # compile Jailhouse and install to local build directory
+
+  make install
+
+
+  # fixup Python packages (you need to do this only once)
+  # NOTE: check this carefully!
+  # my Ubuntu Laptop uses Python 3.10, but the rootfs uses Python 3.11.
+  # Check the Python versions with "python3 --version".
+  # We must install Python 3.11 packages in this case.
+
+  mv ../build-rk3568/usr/local/lib/python3.10 ../build-rk3568/usr/local/lib/python3.11
+  rm -rf ../build-rk3568/usr/local/lib/python3.11/dist-packages/pyjailhouse/__pycache__
+
+
+  # copy generated files to Frodo/Sam (usually needs to be done once)
+
+  rsync -ai ../build-rk3568/lib/modules/ azuepke@sam:nfsroots/rk3568/lib/modules/
+  scp -r ../build-rk3568/usr/* azuepke@sam:nfsroots/rk3568/usr/
+
+
+  # copy Linux driver, hypervisor and cell config (repeat if files were changed)
+  # adapt the following for your chip and kernel version accordingly
+  # NOTE: newer kernels install in 6.11.0-rc4+/updates/driver/jailhouse.ko!
+
+  scp driver/jailhouse.ko                                            azuepke@sam:nfsroots/rk3566/lib/modules/6.1.104+/extra/driver/
+  scp hypervisor/jailhouse.bin                                       azuepke@sam:nfsroots/rk3566/lib/firmware/
+  scp configs/arm64/rk3568*.cell configs/arm64/dts/inmate-rk3568.dtb azuepke@sam:nfsroots/rk3566/lib/firmware/
+
+
+If you change the Linux driver, the hypervisor or the cell configuration,
+run "make" and copy the modified files to the target.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linux Kernel for the Guest Cell
+================================
+
+To run a Linux kernel in the guest cell, we need a Linux kernel and an initrd.
+For the Linux kernel, we can use the same kernel as for the root cell.
+As initrd, we use a very small BusyBox-based root file system to save RAM.
+Prepare the following steps on Frodo/Sam.
+
+  # copy Linux kernel and initrd.
+  cp /tftpboot/rk3566/Image         ~/nfsroots/rk3566/lib/firmware/
+  cp /tftpboot/default_initrd_arm64 ~/nfsroots/rk3566/lib/firmware/
+
+That's all we need for now. The right DTB will be provided by Jailhouse.
+
+In case you want to copy the Linux kernel image directly from your source
+directory after compilation, run:
+
+  scp arch/arm64/boot/Image azuepke@sam:nfsroots/rk3568/lib/firmware/
+
+
+
+
+
+
+
+
+
+
+
+
+
+Testing Jailhouse on the Target
+================================
+
+We now test Jailhouse on the system.
+We assume the system is freshly booted and all files were copied.
+Access the system through the first serial console.
+
+  # 0. serial console hack (optional)
+  # NOTE: this is only needed if the serial console doesn't show any output!
+  # NOTE: do not apply normally!
+
+  stty -F /dev/ttyS0 1500000 ; cat /dev/ttyS0 &
+
+
+  # 1. load jailhouse driver on the target
+
+  modprobe jailhouse
+
+  # should print the following on the console:
+  # [  124.054104] jailhouse: loading out-of-tree module taints kernel.
+  # you should now be able to control jailhouse with the "jailhouse" command
+
+
+  # 2. load root cell configuration
+  # NOTE: use "rk3568.cell" for the RK3588
+
+  jailhouse enable /lib/firmware/rk3568.cell
+
+  # should print the following on the console:
+  # [...]
+  # [   51.821930] The Jailhouse is opening.
+  # Check the output carefully if any errors or failures are shown!
+
+
+  # 3. start second Linux in guest cell
+  # NOTE: change "rk3568" with "rk3588" for the RK3588
+
+  jailhouse cell linux /lib/firmware/rk3568-linux-demo.cell /lib/firmware/Image -d /lib/firmware/inmate-rk3568.dtb -i /lib/firmware/initrd -c "console=ttyS1,1500000 cma=4M"
+
+  # This starts the guest Linux cell on the second serial console as follows:
+  # - Cell config:   /lib/firmware/rk3568-linux-demo.cell
+  # - Kernel:        /lib/firmware/Image
+  # - Initrd:        /lib/firmware/initrd
+  # - DTB:           /lib/firmware/inmate-rk3568.dtb
+  # - Command line:  console=ttyS1,1500000 cma=4M
+
+
+  # 4. shutdown and destroy the Linux guest cell
+  # NOTE: afterwards, you can repeat step 3!
+
+  jailhouse cell shutdown 1
+  jailhouse cell destroy 1
+
+
+  # 5. disable Jailhouse
+  # NOTE: afterwards, you can redo the steps from 2 on
+
+  jailhouse disable
+
+
+  # 6. unload Jailhouse kernel module
+  # NOTE: afterwards, you can redo the steps from 1 on
+
+  rmmod jailhouse
+
+
+  # reboot in case something is broken
+
+  reboot -f
+
+
+Network between Root Cell and Guest Cell
+=========================================
+
+In the root cell, we have Debian 12, so use the "ip" command to configure
+the Jailhouse network interface "enP3p0s1" (enP5p0s1 on RK3588).
+Run the following in the serial console of the root cell:
+
+  ip addr add 192.168.0.1/24 dev enP3p0s1
+  ip link set enP3p0s1 up
+
+
+In the guest cell, we have Busybox and can use "ifconfig" to configure
+the other end of the Jailhouse network interface "eth0".
+Run the following in the serial console of the guest cell:
+
+  ifconfig eth0 192.168.0.2 up
+
+
+Now try to ping the guest cell from the root cell. In the root cell, run:
+
+  ping 192.168.0.1
+
+
+Note that BusyBox environment in the guest cell has issues with CTRL+C.
+In case the programs get stuck, reboot the guest cell.
+There is no way to connect to the outside world from the guest cell.

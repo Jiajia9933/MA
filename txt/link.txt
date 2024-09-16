@@ -1,0 +1,58 @@
+hier ein paar Infos zu Jailhouse:
+
+ Git repo:
+ https://github.com/siemens/jailhouse
+
+ A talk that introduces JH and some of the problems:
+ https://www.youtube.com/watch?v=pvs0fv-gnvw
+
+ And there is another talk where Jan shows how to configure it:
+ https://www.youtube.com/watch?v=7fiJbwmhnRw
+
+ Note that the configuration for 64-bit Arm is a bit different than or x86.
+
+ ***
+
+ Du solltest auch noch wissen, wie man einen Linux Kernel konfiguriert und
+ kompiliert:
+
+ Längere Erklärung für x86:
+ https://www.youtube.com/watch?v=WiZ05pnHZqM
+
+ Beispiel für Arm:
+ https://www.youtube.com/watch?v=ARpYV2dIuxI
+
+ ***
+
+ Nvidia Orin:
+ https://www.nvidia.com/de-de/autonomous-machines/embedded-systems/jetson-orin/
+
+ Wir haben "Jetson AGX Orin mit 32 GB" und "Jetson Orin Nano" am Lehrstuhl.
+ Wir haben auch die Vorgänger: TX1 -> TX2 -> Xavier -> Orin
+ In der Nintendo Switch ist eine Variante vom TX1 verbaut.
+ Die nächste Generation der Switch wird eine Variante vom Orin verwenden.
+ Der Orin wird auch von NIO verwendet:
+ https://blogs.nvidia.com/blog/nio-es7-intelligent-ev-drive-orin/
+
+ Für die Linux-Installation vom Orin habe ich eine Anleitung geschrieben, die ich
+ angehängt habe. Die Informationen habe ich aus der Doku von Nvidia herauskopiert:
+ https://docs.nvidia.com/jetson/archives/r35.2.1/DeveloperGuide/index.html
+
+ Linux ist auf dem Board schon installiert, aber ich vielleicht habe ich auch
+ schon eine neuere Version installiert. Dann wäre das r36.x.y und nicht r35.2.1
+ wie in der Doku beschrieben. Die Schritte sind aber gleich.
+
+ Als ersten Schritt solltest du dich mit dem Orin vertraut machen. Logge dich
+ über Frodo/Sam auf dem vorhandenen System ein und schaue dich dort um.
+ Benutzername und PAssword sind Nvidia. Du kannst nichts kaputt machen. Wir
+ installieren dann einfach wieder neu :-P
+
+ Die Schritte sind dann ungefähr wie folgt:
+ 1. Linux Kernel für Orin anpassen, kompilieren und starten
+  - hier gibt es viele Anleitungen für Linux und Orin
+ 2. Jailhouse für den Orin kompileren & laden & starten
+  - hier gibt es Anleitungen für Jailhouse
+ 3. Jailhouse richtig und ohne Crashes ans Laufen bekommen
+  - gleiche Schritte wie in Haozhengs Thesis
+ 4. Real-time-Experimente
+  - für deine Master-Thesis
