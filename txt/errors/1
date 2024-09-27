@@ -1,0 +1,687 @@
+jiajia@theia:~/Linux_for_Tegra/source$ export IGNORE_PREEMPT_RT_PRESENCE=1
+jiajia@theia:~/Linux_for_Tegra/source$ make modules
+================================================================================
+make modules - conftest ...
+================================================================================
+mkdir -p /home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia;
+cp -av /home/jiajia/Linux_for_Tegra/source/nvidia-oot/scripts/conftest/* /home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia/;
+'/home/jiajia/Linux_for_Tegra/source/nvidia-oot/scripts/conftest/Makefile' -> '/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia/Makefile'
+'/home/jiajia/Linux_for_Tegra/source/nvidia-oot/scripts/conftest/conftest.h' -> '/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia/conftest.h'
+'/home/jiajia/Linux_for_Tegra/source/nvidia-oot/scripts/conftest/conftest.sh' -> '/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia/conftest.sh'
+make ARCH=arm64 \
+	src=/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia obj=/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia \
+	CC=aarch64-linux-gnu-gcc LD=aarch64-linux-gnu-ld \
+	NV_KERNEL_SOURCES=/home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src \
+	NV_KERNEL_OUTPUT=/home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src \
+	-f /home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest/nvidia/Makefile
+make[1]: Entering directory '/home/jiajia/Linux_for_Tegra/source'
+  CONFTEST: __alloc_disk_node_has_lkclass_arg
+  CONFTEST: blk_execute_rq_has_no_gendisk_arg
+  CONFTEST: blk_mq_alloc_disk_for_queue
+  CONFTEST: blk_mq_destroy_queue
+  CONFTEST: block_device_operations_open_has_gendisk_arg
+  CONFTEST: block_device_operations_release_has_no_mode_arg
+  CONFTEST: bus_type_struct_remove_has_int_return_type
+  CONFTEST: class_create_has_no_owner_arg
+  CONFTEST: class_struct_devnode_has_const_dev_arg
+  CONFTEST: define_semaphore_has_number_arg
+  CONFTEST: device_add_disk_has_int_return_type
+  CONFTEST: devm_thermal_of_zone_register
+  CONFTEST: disk_check_media_change
+  CONFTEST: dma_slave_config_struct_has_slave_id
+  CONFTEST: drm_aperture_remove_framebuffers
+  CONFTEST: drm_driver_struct_has_irq_enabled_arg
+  CONFTEST: drm_fb_helper_alloc_info
+  CONFTEST: drm_fb_helper_prepare_has_preferred_bpp_arg
+  CONFTEST: drm_fb_helper_unregister_info
+  CONFTEST: drm_fb_helper_struct_has_info_arg
+  CONFTEST: drm_mode_config_struct_has_fb_base_arg
+  CONFTEST: drm_scdc_get_set_has_struct_drm_connector_arg
+  CONFTEST: ethtool_ops_get_set_coalesce_has_coal_and_extack_args
+  CONFTEST: ethtool_ops_get_set_ringparam_has_ringparam_and_extack_args
+  CONFTEST: get_user_pages
+  CONFTEST: iio_dev_opaque_has_mlock
+  CONFTEST: iommu_map_has_gfp_arg
+  CONFTEST: kthread_complete_and_exit
+  CONFTEST: netif_set_tso_max_size
+  CONFTEST: netif_napi_add_weight
+  CONFTEST: pde_data
+  CONFTEST: register_shrinker_has_fmt_arg
+  CONFTEST: snd_soc_card_jack_new_has_no_snd_soc_jack_pins
+  CONFTEST: snd_soc_component_driver_struct_has_non_legacy_dai_naming
+  CONFTEST: snd_soc_dai_link_struct_has_c2c_params_arg
+  CONFTEST: snd_soc_of_get_dai_name_has_index_arg
+  CONFTEST: tc_taprio_qopt_offload_struct_has_cmd
+  CONFTEST: tegra_dev_iommu_get_stream_id
+  CONFTEST: tegra_ivc_struct_has_iosys_map
+  CONFTEST: request_struct_has_completion_data_arg
+make[1]: Leaving directory '/home/jiajia/Linux_for_Tegra/source'
+================================================================================
+make modules - hwpm ...
+================================================================================
+make -j 12 ARCH=arm64 \
+	-C /home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src \
+	M=/home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm \
+	CONFIG_TEGRA_OOT_MODULE=m \
+	srctree.hwpm=/home/jiajia/Linux_for_Tegra/source/hwpm \
+	srctree.nvconftest=/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest \
+	modules
+make[1]: Entering directory '/home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src'
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/common/allowlist.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/common/aperture.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/common/ip.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/common/resource.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/common/init.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/aperture_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/clk_rst_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/driver.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/io_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/ip_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/ioctl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/kmem.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/log.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/mem_mgmt_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/regops_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/timers.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/soc_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/os/linux/debugfs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/t234_aperture.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/t234_interface.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/t234_ip.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/t234_mem_mgmt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/t234_regops_allowlist.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/t234_resource.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/rtr/t234_rtr.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/pma/t234_pma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/nvdla/t234_nvdla.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/pva/t234_pva.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/mss_channel/t234_mss_channel.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/nvenc/t234_nvenc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/ofa/t234_ofa.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/vic/t234_vic.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/display/t234_display.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/isp/t234_isp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/mgbe/t234_mgbe.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/mss_iso_niso_hubs/t234_mss_iso_niso_hubs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/mss_mcf/t234_mss_mcf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/mss_gpu_hub/t234_mss_gpu_hub.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/nvdec/t234_nvdec.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/pcie/t234_pcie.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/scf/t234_scf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/hal/t234/ip/vi/t234_vi.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/nvhwpm.o
+  MODPOST /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/Module.symvers
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/nvhwpm.mod.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/nvhwpm.ko
+make[1]: Leaving directory '/home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src'
+================================================================================
+make modules - nvidia-oot ...
+================================================================================
+make -j 12 ARCH=arm64 \
+	-C /home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src \
+	M=/home/jiajia/Linux_for_Tegra/source/nvidia-oot \
+	CONFIG_TEGRA_OOT_MODULE=m \
+	srctree.nvidia-oot=/home/jiajia/Linux_for_Tegra/source/nvidia-oot \
+	srctree.hwpm=/home/jiajia/Linux_for_Tegra/source/hwpm \
+	srctree.nvconftest=/home/jiajia/Linux_for_Tegra/source/out/nvidia-conftest \
+	KBUILD_EXTRA_SYMBOLS=/home/jiajia/Linux_for_Tegra/source/hwpm/drivers/tegra/hwpm/Module.symvers \
+	modules
+make[1]: Entering directory '/home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src'
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/tegra-safety-audio/i2s.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/tegra-safety-audio/sound-card.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/tegra210_virt_alt_admaif.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/tegra_asoc_xbar_virt_alt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_oops_virt_storage/tegra_hv_vblk_oops.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra_asoc_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/cpuidle/cpuidle-tegra-auto.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_virt_storage/tegra_hv_vblk.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bluetooth/realtek/rtk_coex.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/tegra_asoc_util_virt_alt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/devfreq/tegra_wmark.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra/tegra-se-key.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra/tegra-se-main.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/devfreq/governor_pod_scaling.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra/tegra-se-aes.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/ivc_ext.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/cpuidle/cpuidle-debugfs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_virt_storage/tegra_hv_ioctl.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/tegra-safety-audio/safety-i2s.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/../../clk/tegra/clk-bpmp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra_asoc_machine.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/tegra_asoc_machine_virt_alt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra/tegra-se-hash.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpio/gpio-max77851.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_virt_storage/tegra_hv_mmc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/tegra_pcm_virt_alt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/../../reset/tegra/reset-bpmp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/nvaudio_ivc/tegra_virt_alt_ivc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bluetooth/realtek/rtk_misc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/../../soc/tegra/powergate-bpmp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/bpmp-debugfs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/drm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_virt_storage/tegra_hv_scsi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/hwmon/f75308.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra_isomgr_bw.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/bpmp-tegra186-hv.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/tegra_virt_ref_alt.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra/tegra-se.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra-hv-vse-safety.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra-nvvse-cryptodev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/crypto/tegra-se-nvrng.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/snd-soc-tegra210-virt-alt-admaif.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra_codecs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_dmic.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_virt_storage/tegra_hv_ufs.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra-virt-alt/snd-soc-tegra-virt-t210ref-pcm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_ahub.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/firmware/tegra/tegra_bpmp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/i2c/busses/i2c-nvvrs11.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/mfd/nvidia-vrs-pseq.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bluetooth/realtek/rtk_bt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/bus.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/mfd/max77851.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_i2s.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/block/tegra_virt_storage/tegra_vblk.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bmi088/bmi088_core.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra186_dspk.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/mtd/devices/tegra_hv_mtd.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_admaif.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_amx.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/uapi.o
+  DTC     /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods.dtb
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_irq.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvsciipc/nvsciipc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/pcie/tegra_vnet.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/syncpt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/nvpps/nvpps_main.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bluetooth/realtek/rtk_btusb.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/nvpmodel/nvpmodel-clk-cap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bmi088/bmi088_iio.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_adx.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_mixer.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/submit.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/firewall.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/nv-p2p/nvidia-p2p.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/comm-channel.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/dt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_net.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_sfc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/ether_linux.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/bmi088/bmi088.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_krnl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/endpoint.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/dev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/osd.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/epc/module.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/gem.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/nvpps/ptp-notifier.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pci/controller/tegra-pcie-edma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/fb.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_afc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/iova-alloc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/iova-mngr.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/ethtool.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_mvc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_irq.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/pci-client.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/dp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/stream-extensions.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/hub.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/nvpps/nvpps.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/tty/serial/wch_35x/wch_devtable.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/intr.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pci/controller/pcie-tegra-vf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_iqc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_ethtool.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_mem.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/tty/serial/wch_35x/wch_serial.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/tty/serial/wch_35x/wch_main.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/tty/serial/wch_35x/wch_pre_main.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/plane.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/cdma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pci/endpoint/functions/pci-epf-dma-test.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_ope.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/vmap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/ether_tc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/dc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/output.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_unimac.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/channel.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_peq.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra210_mbdrc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/rgb.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/vmap-pin.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/sysfs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/hda.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_chksum.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/hdmi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_acpi.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/tty/serial/wch_35x/wch.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pinctrl/pinctrl-tegra194-pexclk-padctrl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/epf/module.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_dpm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/job.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/mipi-phy.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra186_arad.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/dsi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/sor.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra186_asrc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pinctrl/pinctrl-tegra234-dpaux.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pinctrl/pinctrl-max77851.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/nvscic2c-pcie-epc.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/nvscic2c-pcie/nvscic2c-pcie-epf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/tegra-pcie-dma-test.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_bpmpipc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/debug.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/marvell/oak/oak_pci.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/mipi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/tegra_machine_driver.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/dpaux.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/fence.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/actmon.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/gr2d.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/ioctl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/bluedroid_pm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_clock.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/gr3d.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x01.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra-utils-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-dmic-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-ahub-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-i2s-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra186-dspk-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-admaif-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-amx-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-adx-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-mixer-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-sfc-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-afc-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-mvc-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-iqc-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra210-ope-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra186-arad-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra186-asrc-oot.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/sound/soc/tegra/snd-soc-tegra-machine-driver-oot.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/falcon.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x02.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x04.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/hwpm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x05.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/vic.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x06.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/nvdec.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x07.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/nvenc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/ptp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_debugfs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/nvjpg.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/ioctl_example.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/hw/host1x08.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/context.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/riscv.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_dma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/util.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/ofa.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/virt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_dmabuf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_ipi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/trace.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_netdevice.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_oist.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/macsec.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/selftests.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/osi_core.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/osi_hal.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x/host1x-next.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x-fence/dev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_optee.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x-nvhost/nvhost.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_pci.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_smmu_drv.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods_tegraprod.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x-nvhost/falcon.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/drm/tegra/tegra-drm-next.o
+  DTB     /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods.dtb.S
+  AS [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods.dtb.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/macsec.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/common/osi_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/common/eqos_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/common/mgbe_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/osi_dma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/osi_dma_txrx.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x-fence/host1x-fence.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/eqos_core.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/ivc_core.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/mgbe_core.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/mce/tegra23x-mce.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/uncore_pmu/tegra23x_perf_uncore.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/mce/mce.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/mc-utils/mc-utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/core_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/xpcs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/mgbe_dma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/eqos_mmc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/eqos_dma.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/misc/mods/mods.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/eqos_desc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/mgbe_desc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/power/reset/max77851-poweroff.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/dma/debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/mgbe_mmc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/microchip/5.15/lan743x_main.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/gpu/host1x-nvhost/host1x-nvhost.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/frp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/microchip/5.15/lan743x_ethtool.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/microchip/5.15/lan743x_ptp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/vlan_filter.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernetrm/osi/core/debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-ast.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-reset.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-hsp-smb.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/mce/tegra-mce.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-hsp-ss.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/psc/tegra23x_psc_mailbox.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/capture-ivc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/pwm/pwm-tegra-tachometer.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-worker.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-fsm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-init-deinit.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-mailbox.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/psc/psc_debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-bootstrap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/ras/arm64-ras.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/regulator/max77851-regulator.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-admin.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/nvidia/nvethernet/nvethernet.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/realtek/r8168_n.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-ipc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/tegra-aon-hsp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/native/m_ttcan_linux.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/native/m_ttcan_sys.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/ivc-bus.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-ipc-signal.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/psc/tegra23x_psc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/tegra_bootloader_debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/../tegra-ivc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-client-ipc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/rtc/nvvrs-pseq-rtc.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/microchip/lan743x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/rtc/rtc-max77851.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/scsi/ufs/ufs-tegra-common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-module.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-pm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/hal/m_ttcan.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/camchar.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/camera-diagnostics.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-util-common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/tegra-cactmon-mc-all.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/tegra-fsicom.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/soc/tegra/fuse/kfuse.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/tegra-aon-mail.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/hal/m_ttcan_intr.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/rtcpu-debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/mc-hwpm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/scsi/ufs/ufs-provision-dummy.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-admin-debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/hsp-mailbox-client.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/tegra-uss-io-proxy.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/tegra-aon-module.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/dce-debug-perf.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/tegra-bootloader-debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/aon-hsp-mbox-client.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/spi/spi-aurix-tegra.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/spi/spi-tegra210-quad.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/hal/m_ttcan_list.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/hal/m_ttcan_ram.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/scsi/ufs/ufs-provision.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/tegra-aon-debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/clk-group.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/dce/tegra-dce.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/device-group.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/tegra-aon-ivc-echo.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/reset-group.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/rtcpu-monitor.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/spi/spi-tegra124-slave.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/tegra-camera-rtcpu-base.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/hal/m_ttcan_tt.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/scsi/ufs/ufs-tegra.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/scsi/ufs/ufs-tegra-provision.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/thermal/pex9749-thermal.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/aon/tegra234-aon.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/thermal/tegra234-oc-event.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/tegra-rtcpu-trace.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/thermal/thermal-trip-event.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/thermal/max77851_thermal.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/realtek/r8168_asf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/realtek/rtl_eeprom.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/realtek/rtltool.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/watchdog/softdog-platform.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/watchdog/watchdog-tegra-t18x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/watchdog/max77851_wdt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_core.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/can/mttcan/mttcan.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/nvdla.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/nvdla_buffer.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/nvdla_ioctl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/dla_queue.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/nvdla_queue.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/nvdla_debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_cmd.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_security.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_alloc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_cache.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_dev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/virt/tegra/tegra_hv_pm_ctl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/virt/tegra/hvc_sysfs.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_ioctl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_mailbox.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvdla/nvhost-nvdla.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/tsec/tsec_comms/tsec_comms.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/tsec/tsec_boot.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/virt/tegra/ivc-cdev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_dmabuf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_interface_regs_t19x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_version_config_t19x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/tsec/tsec.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_io.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ioctl_query.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/virt/tegra/userspace_ivc_mempool.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/virt/tegra/tegra_hv_vcpu_yield.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_mailbox_t19x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_isr.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_fault.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_queue.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/tsec/tsecriscv.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_debug.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/dc/bridge/maxim_gmsl_dp_serializer.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_trace.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/max9295.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/cdi/cdi_gpio.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_abort.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ioctl_set.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_handle.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_ccq_t19x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/cdi/cdi_mgr.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/nvpva_elf_parser.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_vpu_exe.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_heap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/dc/bridge/maxim_gmsl_hdmi_serializer.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/platform/tegra/rtcpu/tegra-camera-rtcpu.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/staging/platform/tegra/gte/tegra194_gte.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_ioctl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/nvpva_client.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/max9296.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/nvpva_queue.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ieee80211.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_init.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/dc/bridge/ti_fpdlink_dp_serializer.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_dma.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/nvpva_buffer.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_mlme.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_vpu_ocd.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/staging/platform/tegra/gte_test/tegra194_gte_test.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_sha256.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/cdi/cdi_dev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/camera/tegra_camera_platform.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_system_allow_list.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_vpu_app_auth.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_iommu_context_dev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_tag.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_mm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/max96712.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/nv-virtio/nv-virtio-console-poc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/nvpva_syncpt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_mlme_ext.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_fw_carveout.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_isr_t23x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/cdi/cdi_pwm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_stats.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/cdi/cam_cdi_tsc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_mailbox_t23x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/usb/typec/fusb301.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_interface_regs_t23x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_version_config_t23x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/ar1335_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_ccq_t23x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_carveout.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/pva_sec_ec.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_kasan_wrapper.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/capture/capture-support.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_mi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/isc/isc_gpio.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/lt6911uxc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_imx185.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/pva/nvhost-pva.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvcsi/nvcsi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_id_array.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_sci_ipc.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_pp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/isc/isc_mgr.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/capture/nvhost-capture.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/vi/vi5.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_init_t19x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_imx219.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_imx274.o
+  AS [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap_cache_maint.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_imx318.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_imx390.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_wlan_util.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_vht.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvcsi/deskew.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/vi/nvhost-vi5.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/isp/isp5.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/nvmap/nvmap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_imx477.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/virt/tegra_gr_comm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_ov5693.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/isc/isc_dev.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_ar0234.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/pca9570.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/isp/nvhost-isp5.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/nv_hawk_owl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_pwrctrl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_rf.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/i2c/virtual_i2c_mux.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_chplan.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/isc/isc_pwm.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/monitor/rtw_radiotap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_recv.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_sta_mgt.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvcsi/nvcsi-t194.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvcsi/nvhost-nvcsi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ap.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/mesh/rtw_mesh.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/mesh/rtw_mesh_pathtbl.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/mesh/rtw_mesh_hwmp.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_xmit.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_p2p.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tests/utils/tegracam_log.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/video/tegra/host/nvcsi/nvhost-nvcsi-t194.o
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_sta_mgt.c: In function ‘rtw_mfree_stainfo’:
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_sta_mgt.c:387:25: error: the comparison will always evaluate as ‘true’ for the address of ‘lock’ will never be NULL [-Werror=address]
+  387 |         if (&psta->lock != NULL)
+      |                         ^~
+In file included from /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/include/drv_types.h:103,
+                 from /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_sta_mgt.c:17:
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/include/sta_info.h:263:17: note: ‘lock’ declared here
+  263 |         _lock   lock;
+      |                 ^~~~
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_rson.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_tdls.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_br_ext.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tests/sensor_dt_test.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tests/sensor_dt_test_nodes.o
+cc1: all warnings being treated as errors
+make[7]: *** [scripts/Makefile.build:295: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_sta_mgt.o] Error 1
+make[7]: *** Waiting for unfinished jobs....
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tests/modules/sensor_kernel_tests_core.o
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ap.c: In function ‘rtw_ap_update_chbw_by_ifbmp’:
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ap.c:4401:42: error: the comparison will always evaluate as ‘true’ for the address of ‘padapters’ will never be NULL [-Werror=address]
+ 4401 |                 if (!(ifbmp & BIT(i)) || !dvobj->padapters)
+      |                                          ^
+In file included from /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ap.c:17:
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/include/drv_types.h:1141:19: note: ‘padapters’ declared here
+ 1141 |         _adapter *padapters[CONFIG_IFACE_NUMBER];/*IFACE_ID_MAX*/
+      |                   ^~~~~~~~~
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ap.c:4421:42: error: the comparison will always evaluate as ‘true’ for the address of ‘padapters’ will never be NULL [-Werror=address]
+ 4421 |                 if (!(ifbmp & BIT(i)) || !dvobj->padapters)
+      |                                          ^
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/include/drv_types.h:1141:19: note: ‘padapters’ declared here
+ 1141 |         _adapter *padapters[CONFIG_IFACE_NUMBER];/*IFACE_ID_MAX*/
+      |                   ^~~~~~~~~
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tests/modules/sensor_kernel_tests_runner.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/regmap_util.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/camera_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/camera_gpio.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/sensor_common.o
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_tdls.c: In function ‘rtw_tdls_set_wmm_params’:
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_tdls.c:1071:13: error: the comparison will always evaluate as ‘true’ for the address of ‘WMM_param’ will never be NULL [-Werror=address]
+ 1071 |         if (&pmlmeinfo->WMM_param) {
+      |             ^
+In file included from /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/include/drv_types.h:105,
+                 from /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_tdls.c:17:
+/home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/include/rtw_mlme_ext.h:331:33: note: ‘WMM_param’ declared here
+  331 |         struct WMM_para_element WMM_param;
+      |                                 ^~~~~~~~~
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/tpg/tpg_t19x.o
+cc1: all warnings being treated as errors
+make[7]: *** [scripts/Makefile.build:295: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_ap.o] Error 1
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/camera_version_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/nvcamera_log.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tegracam_v4l2.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tegracam_core.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tests/sensor_kernel_tests.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tegracam_ctrls.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tegracam_utils.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/vi/vi5_fops.o
+cc1: all warnings being treated as errors
+make[7]: *** [scripts/Makefile.build:295: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce/core/rtw_tdls.o] Error 1
+make[6]: *** [scripts/Makefile.build:559: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek/rtl8822ce] Error 2
+make[5]: *** [scripts/Makefile.build:559: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless/realtek] Error 2
+make[4]: *** [scripts/Makefile.build:559: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/wireless] Error 2
+make[4]: *** Waiting for unfinished jobs....
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/vi/mc_common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/vi/graph.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/tpg/nvhost-vi-tpg-t19x.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/cam_fsync/cam_fsync.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/vi/channel.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/vi/core.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/csi/csi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/nvcsi/csi5_fops.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/fusa-capture/capture-vi.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/fusa-capture/capture-common.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/fusa-capture/capture-vi-channel.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/fusa-capture/capture-isp-channel.o
+  CC [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/fusa-capture/capture-isp.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/media/platform/tegra/camera/tegra-camera.o
+  LD [M]  /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net/ethernet/realtek/r8168.o
+make[3]: *** [scripts/Makefile.build:559: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers/net] Error 2
+make[2]: *** [scripts/Makefile.build:559: /home/jiajia/Linux_for_Tegra/source/nvidia-oot/drivers] Error 2
+make[1]: *** [Makefile:1910: /home/jiajia/Linux_for_Tegra/source/nvidia-oot] Error 2
+make[1]: Leaving directory '/home/jiajia/Linux_for_Tegra/source/kernel/kernel-jammy-src'
+make: *** [Makefile:71: nvidia-oot] Error 2

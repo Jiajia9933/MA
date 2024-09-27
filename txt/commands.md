@@ -55,19 +55,20 @@ $ strings tegra234-p3737-0000+p3701-0000.dtb|grep "jiajia"
 
 ```
 cd ~/LinuxKernel/Linux_for_Tegra/source/nvidia-oot/device-tree/platform/generic-dts/dtbs
-scp tegra234-p3737-0000+p3701-0000-nv.dtb jiajia@sam:/tftpboot/orin/
+scp tegra234-p3737-0000+p3701-0000.dtb jiajia@sam:/tftpboot/orin/
 ssh sam
 cd /tftpboot/orin/
-scp tegra234-p3737-0000+p3701-0000-nv.dtb nvidia@orin:/home/nvidia/
+scp tegra234-p3737-0000+p3701-0000.dtb nvidia@orin:/home/nvidia/
 
 ### 登陆nvidia 板子
 taco target orin -s
 ### 将dtb文件移动到对的文件夹 /boot/dtb/
-sudo mv /home/nvidia/tegra234-p3737-0000+p3701-0000-nv.dtb /boot/dtb/
+sudo mv /home/nvidia/tegra234-p3737-0000+p3701-0000.dtb /boot/dtb/
+sudo mv /home/nvidia/Image /boot/
 ### 进入文件夹
 cd /boot/dtb
 ### 用新上传的dtb文件替换原本的 kernel_tegra234-p3737-0000+p3701-0000-nv.dtb
-sudo cp tegra234-p3737-0000+p3701-0000-nv.dtb kernel_tegra234-p3737-0000+p3701-0000-nv.dtb
+sudo cp tegra234-p3737-0000+p3701-0000.dtb kernel_tegra234-p3737-0000+p3701-0000-nv.dtb
 ### 重启系统，L4T
 sudo reboot
 ```

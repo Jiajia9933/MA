@@ -1,0 +1,73 @@
+~/5_15_136/Linux_for_Tegra/
+
+git log 			看记录
+git checkout + 记录码  	回滚
+git checkout -b CC1 		添加 branch
+git branch -d CC1  		删除 branch
+
+
+
+
+-b 1: 
+
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-gnu-
+NO patch
+!!! 无法 make modules. 无法添加 oot modules
+Error 见 /home/jiajia/Desktop/MA/pdf/txt/errors/1.txt
+—————————————————————————————————————————————————————
+
+
+
+-b 2: 
+
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+No patch
+
+!!! 可以编译 oot modules
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+~/5_15_136/withPatch
+
+已经从 noPatch/ 中copy 了 .config 文件
+## --> 还没 export, menuconfig, orin.c...
+
+
+
+
+
+
+
+~/5_15_136/noPatch
+
+全部 compile 完成
+## --> 尝试将 Image dtb modules 放到 orin 上看看能不能连接 ping
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~/Linux_for_Tegra/source
+没有添加patch
+看看能不能在 theia 上 config 一个带有 oot module 的 rt kernel
+将Image, dtb, modules 上传到 orin , 再 L4T reboot 看能不能 ping orin
+
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-gnu-
+
+
