@@ -1,0 +1,510 @@
+theia_withPatch, 
+
+Image:
+~/5_15_136/withPatch/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/Image
+
+modules:
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/rootfs/lib/modules/5.15.122-rt-tegra
+
+用这里的dtb 一 reboot 就 ping不上
+~/5_15_136/withPatch/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dtb
+
+必须应用orin板上的 /boot/dtb/tegra234...backup2
+
+
+
+
+
+
+
+/EndEntire
+file path: /HardwareVendor(1e5a432c-0466-4d31-b009-d4d9239271d3)[0: ]
+/MMap(b,3460000,347ffff)/UnknownMessaging(1d)/Ctrl(0)
+/HD(10,c8a28,20000,5fefed68f359f24e,2,2)/File(\EFI\BOOT)/File(BOOTAA64.efi)
+/EndEntire
+
+L4TLauncher: Attempting Direct Boot
+L4T boot options
+0: primary kernel
+1: backup kernel
+Press 0-1 to boot selection within 3.0 seconds.
+Press any other key to boot default (Option: 0)
+EFI stub: Booting Linux Kernel...
+EFI stub: Using DTB from configuration table
+EFI stub: Loaded initrd from LINUX_EFI_INITRD_MEDIA_GUID device path
+EFI stub: Exiting boot services...
+��debugfs initialized
+��I/TC: Reserved shared memory is disabled
+I/TC: Dynamic shared memory is enabled
+I/TC: Normal World virtualization support is disabled
+I/TC: Asynchronous notifications are disabled
+��[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd421]
+[    0.000000] Linux version 5.15.122-rt-tegra (jiajia@theia) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot 2022.08) 11.3.0, GNU ld (GNU Binutils) 2.38) #5 SMP PREEMPT_RT Fri Sep 27 19:41:41 CEST 2024 ()
+[    0.000000] Machine model: NVIDIA Jetson AGX Orin Developer Kit
+[    0.000000] efi: EFI v2.70 by EDK II
+[    0.000000] efi: RTPROP=0x8281ff318 SMBIOS=0xffff0000 SMBIOS 3.0=0x827c20000 MEMATTR=0x821969018 ESRT=0x821903b18 RNG=0x7b1660018 MEMRESERVE=0x8188b6018 
+[    0.000000] random: crng init done
+[    0.000000] secureboot: Secure boot disabled
+[    0.000000] esrt: Reserving ESRT space from 0x0000000821903b18 to 0x0000000821903b50.
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000080000000-0x0000000833ffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x828d5a7c0-0x828d5cfff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000080000000-0x00000000ffffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   [mem 0x0000000100000000-0x0000000833ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000bfffffff]
+[    0.000000]   node   0: [mem 0x00000000c0000000-0x00000000c7ffffff]
+[    0.000000]   node   0: [mem 0x00000000c8000000-0x00000000fffdffff]
+[    0.000000]   node   0: [mem 0x00000000fffe0000-0x00000000ffffffff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x0000000818c80fff]
+[    0.000000] ��WARNING: clock_disable: clk_power_ungate on gated domain 35 for gpusysclk
+��  node   0: [mem 0x0000000818c81000-0x0000000818ddbfff]
+[    0.000000]   node   0: [mem 0x0000000818ddc000-0x00000008262bffff]
+[    0.000000]   node   0: [mem 0x00000008262c0000-0x00000008281fffff]
+[    0.000000]   node   0: [mem 0x0000000828200000-0x000000082c5fffff]
+[    0.00��WARNING: clock_disable: clk_power_ungate on gated domain 35 for gpc1clk
+��0000]   node   0: [mem 0x000000082c600000-0x000000082c7fffff]
+[    0.000000]   node   0: [mem 0x000000082c800000-0x000000082cd6ffff]
+[    0.000000]   node   0: [mem 0x0000000832000000-0x0000000833ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x0000000833ffffff]
+[    0.00000��WARNING: clock_disable: clk_power_ungate on gated domain 35 for gpc0clk
+��0] On node 0, zone Normal: 21136 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 16384 pages in unavailable ranges
+[    0.000000] cma: Reserved 32 MiB at 0x00000000fd000000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.00000��WARNING: clock_disable: clk_power_ungate on gated domain 34 for dla1_core
+��0] psci: SMC Calling Convention v1.2
+[    0.000000] percpu: Embedded 28 pages/cpu s77744 r8192 d28752 u114688
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: Address authentication (architected algorithm)
+[    0.000000] CPU features: detecte��WARNING: clock_disable: clk_power_ungate on gated domain 34 for nafll_dla1_core
+��d: GIC system register CPU interface
+[    0.000000] CPU features: detected: Virtualization Host Extensions
+[    0.000000] CPU features: detected: Hardware dirty bit management
+[    0.000000] CPU features: detected: Spectre-v4
+[    0.000000] CPU features: detected: Spectre-BHB
+��WARNING: clock_disable: clk_power_ungate on gated domain 34 for dla1_falcon
+��[    0.000000] CPU features: kernel page table isolation forced ON by KASLR
+[    0.000000] CPU features: detected: Kernel page table isolation (KPTI)
+[    0.000000] alternatives: patching kernel code
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 7929968
+[    0��WARNING: clock_disable: clk_power_ungate on gated domain 34 for nafll_dla1_falcon
+��.000000] Policy zone: Normal
+[    0.000000] Kernel command line: root=PARTUUID=45f0e71e-9bf2-4f7e-b054-5c427610c429 rw rootwait rootfstype=ext4 mminit_loglevel=4 console=ttyTCU0,115200 console=ttyAMA0,115200 firmware_class.path=/etc/firmware fbcon=map:0 net.ifnames=0 nospect��WARNING: clock_disable: clk_power_ungate on gated domain 34 for dla0_core
+��re_bhb video=efifb:off console=tty0 bl_prof_dataptr=2031616@0x82C610000 bl_prof_ro_ptr=65536@0x82C600000 
+[    0.000000] Unknown kernel command line parameters "mminit_loglevel=4 fbcon=map:0 bl_prof_dataptr=2031616@0x82C610000 bl_prof_ro_ptr=65536@0x82C600000", will be passed to user s��WARNING: clock_disable: clk_power_ungate on gated domain 34 for nafll_dla0_core
+��pace.
+[    0.000000] Dentry cache hash table entries: 4194304 (order: 13, 33554432 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 2097152 (order: 12, 16777216 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] sof��WARNING: clock_disable: clk_power_ungate on gated domain 34 for dla0_falcon
+��tware IO TLB: mapped [mem 0x00000000f9000000-0x00000000fd000000] (64MB)
+[    0.000000] Memory: 31254664K/32224704K available (18432K kernel code, 4034K rwdata, 9712K rodata, 7488K init, 549K bss, 937272K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinO��WARNING: clock_disable: clk_power_ungate on gated domain 34 for nafll_dla0_falcon
+��bjects=0, CPUs=12, Nodes=1
+[    0.000000] trace event string verifier disabled
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=12.
+[    0.000000] rcu:     RCU priority boosting: priority 1 delay 500 ms.
+[    0.000000] rcu:     RCU_SOFTIRQ processing moved to rcuc kthreads.
+[    0.000000]  No expedited grace period (rcu_normal_after_boot).
+[    0.000000]  Trampoline variant of Tasks RCU enabled.
+[    0.000000]  Rude variant of Tasks RCU enabled.
+[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=12
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 960 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] Root IRQ handler: gic_handle_irq
+[    0.000000] GICv3: 16 PPIs implemented
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x000000000f440000
+[    0.000000] arch_timer: cp15 timer(s) running at 31.25MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xe6a171046, max_idle_ns: 881590405314 ns
+[    0.000003] sched_clock: 56 bits at 31MHz, resolution 32ns, wraps every 4398046511088ns
+[    0.000476] Console: colour dummy device 80x25
+[    0.000497] printk: console [tty0] enabled
+[    0.000621] Calibrating delay loop (skipped), value calculated using timer frequency.. 62.50 BogoMIPS (lpj=125000)
+[    0.000638] pid_max: default: 32768 minimum: 301
+[    0.000724] LSM: Security Framework initializing
+[    0.000765] Yama: becoming mindful.
+[    0.000804] SELinux:  Initializing.
+[    0.001221] Mount-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.001454] Mountpoint-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.004298] rcu: Hierarchical SRCU implementation.
+[    0.006695] Tegra Revision: A01 SKU: 208 CPU Process: 0 SoC Process: 0
+[    0.007044] Remapping and enabling EFI services.
+[    0.008387] smp: Bringing up secondary CPUs ...
+[    0.009347] Detected PIPT I-cache on CPU1
+[    0.009449] GICv3: CPU1: found redistributor 100 region 0:0x000000000f460000
+[    0.009494] CPU1: Booted secondary processor 0x0000000100 [0x410fd421]
+[    0.010295] Detected PIPT I-cache on CPU2
+[    0.010310] GICv3: CPU2: found redistributor 200 region 0:0x000000000f480000
+[    0.010329] CPU2: Booted secondary processor 0x0000000200 [0x410fd421]
+[    0.011085] Detected PIPT I-cache on CPU3
+[    0.011098] GICv3: CPU3: found redistributor 300 region 0:0x000000000f4a0000
+[    0.011117] CPU3: Booted secondary processor 0x0000000300 [0x410fd421]
+[    0.013900] Detected PIPT I-cache on CPU4
+[    0.013927] GICv3: CPU4: found redistributor 10000 region 0:0x000000000f4c0000
+[    0.013958] CPU4: Booted secondary processor 0x0000010000 [0x410fd421]
+[    0.014797] Detected PIPT I-cache on CPU5
+[    0.014810] GICv3: CPU5: found redistributor 10100 region 0:0x000000000f4e0000
+[    0.014828] CPU5: Booted secondary processor 0x0000010100 [0x410fd421]
+[    0.015580] Detected PIPT I-cache on CPU6
+[    0.015593] GICv3: CPU6: found redistributor 10200 region 0:0x000000000f500000
+[    0.015613] CPU6: Booted secondary processor 0x0000010200 [0x410fd421]
+[    0.016446] Detected PIPT I-cache on CPU7
+[    0.016462] GICv3: CPU7: found redistributor 10300 region 0:0x000000000f520000
+[    0.016481] CPU7: Booted secondary processor 0x0000010300 [0x410fd421]
+[    0.019300] Detected PIPT I-cache on CPU8
+[    0.019328] GICv3: CPU8: found redistributor 20000 region 0:0x000000000f540000
+[    0.019360] CPU8: Booted secondary processor 0x0000020000 [0x410fd421]
+[    0.020180] Detected PIPT I-cache on CPU9
+[    0.020193] GICv3: CPU9: found redistributor 20100 region 0:0x000000000f560000
+[    0.020214] CPU9: Booted secondary processor 0x0000020100 [0x410fd421]
+[    0.020986] Detected PIPT I-cache on CPU10
+[    0.021001] GICv3: CPU10: found redistributor 20200 region 0:0x000000000f580000
+[    0.021020] CPU10: Booted secondary processor 0x0000020200 [0x410fd421]
+[    0.021822] Detected PIPT I-cache on CPU11
+[    0.021837] GICv3: CPU11: found redistributor 20300 region 0:0x000000000f5a0000
+[    0.021858] CPU11: Booted secondary processor 0x0000020300 [0x410fd421]
+[    0.021932] smp: Brought up 1 node, 12 CPUs
+[    0.021942] SMP: Total of 12 processors activated.
+[    0.021948] CPU features: detected: 32-bit EL0 Support
+[    0.021951] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+[    0.021953] CPU features: detected: Common not Private translations
+[    0.021954] CPU features: detected: CRC32 instructions
+[    0.021955] CPU features: detected: Data cache clean to Point of Persistence
+[    0.021957] CPU features: detected: Generic authentication (architected algorithm)
+[    0.021958] CPU features: detected: RCpc load-acquire (LDAPR)
+[    0.021959] CPU features: detected: LSE atomic instructions
+[    0.021961] CPU features: detected: Privileged Access Never
+[    0.021963] CPU features: detected: RAS Extension Support
+[    0.021964] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[    0.046849] spectre-bhb mitigation disabled by command line option
+[    0.070915] CPU: All CPU(s) started at EL2
+[    0.075985] devtmpfs: initialized
+[    0.095593] KASLR enabled
+[    0.095780] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.095807] futex hash table entries: 4096 (order: 6, 262144 bytes, linear)
+[    0.097017] pinctrl core: initialized pinctrl subsystem
+[    0.098130] SMBIOS 3.6.0 present.
+[    0.098142] DMI: Unknown NVIDIA Jetson AGX Orin Developer Kit/NVIDIA Jetson AGX Orin Developer Kit, BIOS 36.2.0-gcid-34956989 11/30/2023
+[    0.098715] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.100651] DMA: preallocated 4096 KiB GFP_KERNEL pool for atomic allocations
+[    0.101031] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.101519] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.101624] audit: initializing netlink subsys (disabled)
+[    0.101834] audit: type=2000 audit(0.100:1): state=initialized audit_enabled=0 res=1
+[    0.103159] thermal_sys: Registered thermal governor 'step_wise'
+[    0.103163] thermal_sys: Registered thermal governor 'user_space'
+[    0.103164] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.104909] cpuidle: using governor menu
+[    0.105099] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.105259] ASID allocator initialised with 32768 entries
+[    0.106641] Serial: AMBA PL011 UART driver
+[    0.107686] printk: console [ramoops-1] enabled
+[    0.107691] pstore: Registered ramoops as persistent store backend
+[    0.107694] ramoops: using 0x200000@0x82cdf0000, ecc: 0
+[    0.125234] platform bpmp: Fixing up cyclic dependency with 2c00000.memory-controller:external-memory-controller@2c60000
+[    0.131935] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.131941] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.131944] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.131945] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.132927] cryptd: max_cpu_qlen set to 1000
+[    0.134882] ACPI: Interpreter disabled.
+[    0.136641] iommu: Default domain type: Translated 
+[    0.136645] iommu: DMA domain TLB invalidation policy: strict mode 
+[    0.136962] SCSI subsystem initialized
+[    0.137362] vgaarb: loaded
+[    0.137530] usbcore: registered new interface driver usbfs
+[    0.137568] usbcore: registered new interface driver hub
+[    0.137593] usbcore: registered new device driver usb
+[    0.137931] pps_core: LinuxPPS API ver. 1 registered
+[    0.137935] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.137946] PTP clock support registered
+[    0.138008] EDAC MC: Ver: 3.0.0
+[    0.138815] Registered efivars operations
+[    0.139444] FPGA manager framework
+[    0.139551] Advanced Linux Sound Architecture Driver Initialized.
+[    0.140493] clocksource: Switched to clocksource arch_sys_counter
+[    0.183759] VFS: Disk quotas dquot_6.6.0
+[    0.183848] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.184140] pnp: PnP ACPI: disabled
+[    0.187996] NET: Registered PF_INET protocol family
+[    0.189016] IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.191832] tcp_listen_portaddr_hash hash table entries: 16384 (order: 7, 786432 bytes, linear)
+[    0.192902] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.192938] TCP established hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.193227] TCP bind hash table entries: 65536 (order: 9, 2621440 bytes, linear)
+[    0.196724] TCP: Hash tables configured (established 262144 bind 65536)
+[    0.197074] UDP hash table entries: 16384 (order: 8, 1572864 bytes, linear)
+[    0.199206] UDP-Lite hash table entries: 16384 (order: 8, 1572864 bytes, linear)
+[    0.201640] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.202254] RPC: Registered named UNIX socket transport module.
+[    0.202258] RPC: Registered udp transport module.
+[    0.202258] RPC: Registered tcp transport module.
+[    0.202260] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.202282] PCI: CLS 0 bytes, default 64
+[    0.202565] Unpacking initramfs...
+[    0.212850] hw perfevents: enabled with armv8_cortex_a78 PMU driver, 7 counters available
+[    0.216628] Initialise system trusted keyrings
+[    0.216849] workingset: timestamp_bits=42 max_order=23 bucket_order=0
+[    0.222522] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.223058] NFS: Registering the id_resolver key type
+[    0.223083] Key type id_resolver registered
+[    0.223088] Key type id_legacy registered
+[    0.223174] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.223190] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    0.223214] ntfs: driver 2.1.32 [Flags: R/O].
+[    0.223498] 9p: Installing v9fs 9p2000 file system support
+[    0.235342] NET: Registered PF_ALG protocol family
+[    0.235354] Key type asymmetric registered
+[    0.235359] Asymmetric key parser 'x509' registered
+[    0.235439] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    0.235451] io scheduler mq-deadline registered
+[    0.235459] io scheduler kyber registered
+[    0.245319] EINJ: ACPI disabled.
+[    0.255278] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.257157] SuperH (H)SCI(F) driver initialized
+[    0.257445] msm_serial: driver initialized
+[    0.258233] printk: console [ttyTCU0] enabled
+[    0.259071] arm-smmu 8000000.iommu: probing hardware configuration...
+[    0.259077] arm-smmu 8000000.iommu: SMMUv2 with:
+[    0.259083] arm-smmu 8000000.iommu:  stage 1 translation
+[    0.259084] arm-smmu 8000000.iommu:  stage 2 translation
+[    0.259086] arm-smmu 8000000.iommu:  nested translation
+[    0.259092] arm-smmu 8000000.iommu:  stream matching with 128 register groups
+[    0.259094] arm-smmu 8000000.iommu:  128 context banks (0 stage-2 only)
+[    0.259106] arm-smmu 8000000.iommu:  Supported page sizes: 0x61311000
+[    0.259107] arm-smmu 8000000.iommu:  Stage-1: 48-bit VA -> 48-bit IPA
+[    0.259110] arm-smmu 8000000.iommu:  Stage-2: 48-bit IPA -> 48-bit PA
+[    0.260206] arm-smmu 10000000.iommu: probing hardware configuration...
+[    0.260210] arm-smmu 10000000.iommu: SMMUv2 with:
+[    0.260214] arm-smmu 10000000.iommu:         stage 1 translation
+[    0.260216] arm-smmu 10000000.iommu:         stage 2 translation
+[    0.260218] arm-smmu 10000000.iommu:         nested translation
+[    0.260231] arm-smmu 10000000.iommu:         stream matching with 128 register groups
+[    0.260232] arm-smmu 10000000.iommu:         128 context banks (0 stage-2 only)
+[    0.260242] arm-smmu 10000000.iommu:         Supported page sizes: 0x61311000
+[    0.260244] arm-smmu 10000000.iommu:         Stage-1: 48-bit VA -> 48-bit IPA
+[    0.260244] arm-smmu 10000000.iommu:         Stage-2: 48-bit IPA -> 48-bit PA
+[    0.260688] arm-smmu 12000000.iommu: probing hardware configuration...
+[    0.260692] arm-smmu 12000000.iommu: SMMUv2 with:
+[    0.260695] arm-smmu 12000000.iommu:         stage 1 translation
+[    0.260696] arm-smmu 12000000.iommu:         stage 2 translation
+[    0.260697] arm-smmu 12000000.iommu:         nested translation
+[    0.260701] arm-smmu 12000000.iommu:         stream matching with 128 register groups
+[    0.260703] arm-smmu 12000000.iommu:         128 context banks (0 stage-2 only)
+[    0.260709] arm-smmu 12000000.iommu:         Supported page sizes: 0x61311000
+[    0.260712] arm-smmu 12000000.iommu:         Stage-1: 48-bit VA -> 48-bit IPA
+[    0.260713] arm-smmu 12000000.iommu:         Stage-2: 48-bit IPA -> 48-bit PA
+[    0.275011] loop: module loaded
+[    0.275850] megasas: 07.717.02.00-rc1
+[    0.279825] tun: Universal TUN/TAP device driver, 1.6
+[    0.280293] thunder_xcv, ver 1.0
+[    0.280331] thunder_bgx, ver 1.0
+[    0.280362] nicpf, ver 1.0
+[    0.281112] hclge is initializing
+[    0.281138] hns3: Hisilicon Ethernet Network Driver for Hip08 Family - version
+[    0.281145] hns3: Copyright (c) 2017 Huawei Corporation.
+[    0.281201] e1000: Intel(R) PRO/1000 Network Driver
+[    0.281207] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    0.281236] e1000e: Intel(R) PRO/1000 Network Driver
+[    0.281242] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.281267] igb: Intel(R) Gigabit Ethernet Network Driver
+[    0.281274] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.281288] igbvf: Intel(R) Gigabit Virtual Function Network Driver
+[    0.281294] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    0.281477] sky2: driver version 1.30
+[    0.282036] VFIO - User Level meta-driver version: 0.3
+[    0.283313] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.283321] ehci-pci: EHCI PCI platform driver
+[    0.283348] ehci-platform: EHCI generic platform driver
+[    0.283418] ehci-orion: EHCI orion driver
+[    0.283468] ehci-exynos: EHCI Exynos driver
+[    0.283517] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.283544] ohci-pci: OHCI PCI platform driver
+[    0.283573] ohci-platform: OHCI generic platform driver
+[    0.283646] ohci-exynos: OHCI Exynos driver
+[    0.284001] usbcore: registered new interface driver usb-storage
+[    0.285700] i2c_dev: i2c /dev entries driver
+[    0.288432] device-mapper: ioctl: 4.45.0-ioctl (2021-03-22) initialised: dm-devel@redhat.com
+[    0.289732] sdhci: Secure Digital Host Controller Interface driver
+[    0.289736] sdhci: Copyright(c) Pierre Ossman
+[    0.290120] Synopsys Designware Multimedia Card Interface Driver
+[    0.290627] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.292266] SMCCC: SOC_ID: ID = jep106:036b:0234 Revision = 0x00000401
+[    0.292745] tegra-bpmp bpmp: Adding to iommu group 0
+[    0.294497] tegra-bpmp bpmp: firmware: a381fb560faa591136e7-ac83764aab0
+[    0.388730] Freeing initrd memory: 10980K
+[    1.827187] usbcore: registered new interface driver usbhid
+[    1.827196] usbhid: USB HID core driver
+[    1.830932] optee: probing for conduit method.
+[    1.830999] optee: revision 3.22 (1b7f2993)
+[    1.889389] optee: dynamic shared memory is enabled
+[    1.889650] optee: initialized driver
+[    1.890823] usbcore: registered new interface driver snd-usb-audio
+[    1.892298] NET: Registered PF_PACKET protocol family
+[    1.892597] 9pnet: Installing 9P2000 support
+[    1.892734] Key type dns_resolver registered
+[    1.893414] printk: console [tty0]: printing thread started
+[    1.893498] printk: console [ttyTCU0]: printing thread started
+[    1.893584] printk: console [ramoops-1]: printing thread started
+[    1.893659] Loading compiled-in X.509 certificates
+[    1.903461] Loaded X.509 cert 'Build time autogenerated kernel key: 861b776e977c0720cdd2ddf0d0fde951f58272ca'
+[    1.905009] pstore: Using crash dump compression: deflate
+[    1.938479] gpio-394 (camera-control-output-low): hogged as output/low
+[    1.938504] gpio-397 (camera-control-output-low): hogged as output/low
+[    1.938515] gpio-487 (camera-control-output-low): hogged as output/low
+[    1.938525] gpio-486 (camera-control-output-low): hogged as output/low
+[    1.941417] tegra-gpcdma 2600000.dma-controller: Adding to iommu group 1
+[    1.943655] tegra-gpcdma 2600000.dma-controller: GPC DMA driver register 31 channels
+[    1.947023] tegra_rtc c2a0000.rtc: registered as rtc0
+[    1.947060] tegra_rtc c2a0000.rtc: setting system clock to 1970-01-01T00:00:24 UTC (24)
+[    1.947077] tegra_rtc c2a0000.rtc: Tegra internal Real Time Clock
+[    1.947604] tegra-i2c c240000.i2c: Adding to iommu group 1
+[    1.969300] cpufreq: cpufreq_online: CPU0: Running at unlisted initial frequency: 2007000 KHz, changing to: 2112000 KHz
+[    1.970930] cpufreq: cpufreq_online: CPU4: Running at unlisted initial frequency: 2010000 KHz, changing to: 2112000 KHz
+[    1.972267] cpufreq: cpufreq_online: CPU8: Running at unlisted initial frequency: 2010000 KHz, changing to: 2112000 KHz
+[    1.973599] sdhci-tegra 3400000.mmc: Adding to iommu group 2
+[    1.974403] sdhci-tegra 3460000.mmc: Adding to iommu group 3
+[    1.975606] irq: IRQ172: trimming hierarchy from :bus@0:pmc@c360000
+[    1.975784] irq: IRQ173: trimming hierarchy from :bus@0:interrupt-controller@f400000-1
+[    1.975870] irq: IRQ174: trimming hierarchy from :bus@0:pmc@c360000
+[    1.975981] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    2.386126] ALSA device list:
+[    2.386130]   No soundcards found.
+[    2.386243] sdhci-tegra 3400000.mmc: Prod-setting not available
+[    2.386251] sdhci-tegra 3460000.mmc: Prod-setting not available
+[    2.386297] sdhci-tegra 3400000.mmc: Got CD GPIO
+[    2.395877] sdhci-tegra 3460000.mmc: Failed to set prod-reset settings -22
+[    2.396109] mmc3: CQHCI version 5.10
+[    2.396173] sdhci-tegra 3460000.mmc: Failed to set prod-reset settings -22
+[    2.396390] sdhci-tegra 3400000.mmc: Failed to set prod-reset settings -22
+[    2.396672] sdhci-tegra 3400000.mmc: Failed to set prod-reset settings -22
+[    2.429832] mmc3: SDHCI controller on 3460000.mmc [3460000.mmc] using ADMA 64-bit
+[    2.431540] irq: IRQ175: trimming hierarchy from :bus@0:interrupt-controller@f400000-1
+[    2.431612] mmc4: SDHCI controller on 3400000.mmc [3400000.mmc] using ADMA 64-bit
+[    2.431660] sdhci-tegra 3400000.mmc: Failed to set prod-reset settings -22
+[    2.433152] Freeing unused kernel memory: 7488K
+[    2.433211] Run /init as init process
+[    2.445630] Checking overlayfs setting...
+[    2.453274] Overlayfs is disabled...
+[    2.458432] Root device found: PARTUUID=45f0e71e-9bf2-4f7e-b054-5c427610c429
+[    2.523224] mmc3: Command Queue Engine enabled
+[    2.523232] mmc3: new high speed MMC card at address 0001
+[    2.523507] mmcblk3: mmc3:0001 G1M15M 59.3 GiB 
+[    2.534016]  mmcblk3: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15
+[    2.534667] mmcblk3boot0: mmc3:0001 G1M15M 31.5 MiB 
+[    2.535254] mmcblk3boot1: mmc3:0001 G1M15M 31.5 MiB 
+[    2.535792] mmcblk3rpmb: mmc3:0001 G1M15M 4.00 MiB, chardev (511:0)
+[    3.634224] EXT4-fs (mmcblk3p1): mounted filesystem with ordered data mode. Opts: (null). Quota mode: none.
+[    3.666363] Rootfs mounted over PARTUUID=45f0e71e-9bf2-4f7e-b054-5c427610c429
+[    3.696897] Switching from initrd to actual rootfs
+[    4.219535] systemd[1]: System time before build time, advancing clock.
+[    4.425591] ipv6: module verification failed: signature and/or required key missing - tainting kernel
+[    4.427979] NET: Registered PF_INET6 protocol family
+[    4.428407] Segment Routing with IPv6
+[    4.428414] In-situ OAM (IOAM) with IPv6
+[    4.491408] systemd[1]: systemd 249.11-0ubuntu3.11 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY -P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    4.491783] systemd[1]: Detected architecture arm64.
+[    4.496803] systemd[1]: Hostname set to <orin>.
+[    5.003877] systemd[1]: /etc/systemd/system/nvs-service.service:41: Standard output type syslog is obsolete, automatically updating to journal. Please update your unit file, and consider removing the setting altogether.
+[    5.018558] systemd[1]: /etc/systemd/system/nvargus-daemon.service:42: Standard output type syslog is obsolete, automatically updating to journal. Please update your unit file, and consider removing the setting altogether.
+[    5.146207] systemd[1]: Queued start job for default target Graphical Interface.
+[    5.147737] systemd[1]: Created slice Slice /system/modprobe.
+[    5.148322] systemd[1]: Created slice Slice /system/serial-getty.
+[    5.148809] systemd[1]: Created slice User and Session Slice.
+[    5.149543] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    5.149888] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    5.150026] systemd[1]: Reached target Slice Units.
+[    5.150082] systemd[1]: Reached target Mounting snaps.
+[    5.150127] systemd[1]: Reached target Mounted snaps.
+[    5.150180] systemd[1]: Reached target Swaps.
+[    5.150233] systemd[1]: Reached target Local Verity Protected Volumes.
+[    5.156277] systemd[1]: Listening on RPCbind Server Activation Socket.
+[    5.156727] systemd[1]: Listening on Syslog Socket.
+[    5.156941] systemd[1]: Listening on fsck to fsckd communication Socket.
+[    5.157075] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    5.157372] systemd[1]: Listening on Journal Audit Socket.
+[    5.157548] systemd[1]: Listening on Journal Socket (/dev/log).
+[    5.157765] systemd[1]: Listening on Journal Socket.
+[    5.159117] systemd[1]: Listening on udev Control Socket.
+[    5.159287] systemd[1]: Listening on udev Kernel Socket.
+[    5.160410] systemd[1]: Mounting Huge Pages File System...
+[    5.161633] systemd[1]: Mounting POSIX Message Queue File System...
+[    5.189951] systemd[1]: Mounting Kernel Debug File System...
+[    5.191179] systemd[1]: Mounting Kernel Trace File System...
+[    5.193565] systemd[1]: Starting Journal Service...
+[    5.208390] systemd[1]: Starting Set the console keyboard layout...
+[    5.209765] systemd[1]: Starting Create List of Static Device Nodes...
+[    5.219345] systemd[1]: Starting Load Kernel Module configfs...
+[    5.220752] systemd[1]: Starting Load Kernel Module drm...
+[    5.231134] systemd[1]: Starting Load Kernel Module efi_pstore...
+[    5.232703] systemd[1]: Starting Load Kernel Module fuse...
+[    5.242791] systemd[1]: Starting NVIDIA specific first-boot udev script...
+[    5.244095] systemd[1]: Started Nameserver information manager.
+[    5.244383] systemd[1]: Reached target Preparation for Network.
+[    5.244676] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+[    5.338888] systemd[1]: Starting Load Kernel Modules...
+[    5.340174] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    5.341465] systemd[1]: Starting Coldplug All udev Devices...
+[    5.343688] systemd[1]: Started Journal Service.
+[    5.375641] EXT4-fs (mmcblk3p1): re-mounted. Opts: (null). Quota mode: none.
+[    5.426035] fuse: init (API version 7.34)
+[    5.443050] systemd-journald[321]: Received client request to flush runtime journal.
+[    5.502010] nvsciipc: loading out-of-tree module taints kernel.
+[    5.502960] nvsciipc: loaded module
+[    5.588179] nvmap_heap_init: nvmap_heap_init: created heap block cache
+[    5.588563] nvmap_co_device_init: vpr :dma coherent mem declare 0x0000000849800000,914358272
+[    5.588570] tegra-carveouts tegra-carveouts: assigned reserved memory node vpr-carveout
+[    5.588578] nvmap_page_pool_init: Total RAM pages: 7826475
+[    5.588579] nvmap_page_pool_init: nvmap page pool size: 978309 pages (3821 MB)
+[    5.588648] nvmap_background_zero_thread: PP zeroing thread starting.
+[    5.588670] nvmap_heap_create: created heap vpr base 0x0000000849800000 size (892928KiB)
+[    5.588702] nvmap_heap_create: fsi :dma coherent mem declare 0x000000082f000000,16777216
+[    5.588704] nvmap_heap_create: created heap fsi base 0x000000082f000000 size (16384KiB)
+[    5.653817] tegra-host1x 13e00000.host1x: Adding to iommu group 4
+[    7.548919] ucsi_ccg 1-0008: failed to get FW build information
+[    8.677380] using random self ethernet address
+[    8.677393] using random host ethernet address
+[   12.287377] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[   12.293851] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[   12.319383] tegra-bpmp-i2c bpmp:i2c: failed to transfer message: -6
+[   12.764511] ucsi_ccg 1-0008: con1: failed to register alt modes
+[   12.836560] ucsi_ccg 1-0008: error -ETIMEDOUT: PPM init failed
+
+Ubuntu 22.04.3 LTS orin ttyTCU0
+
+orin login: nvidia (automatic login)
+
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.122-rt-tegra aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Fri Jan  2 13:12:52 UTC 1970 on ttyTCU0
+

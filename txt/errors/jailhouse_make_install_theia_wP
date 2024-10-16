@@ -1,0 +1,499 @@
+jiajia@theia:~/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse$ cp /home/jiajia/orin.c configs/arm64/orin.c
+jiajia@theia:~/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse$ make install
+  UPD     /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/hypervisor/include/generated/config.mk
+  UPD     /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/hypervisor/include/generated/version.h
+  CC [M]  /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/cell.o
+  CC [M]  /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/main.o
+  CC [M]  /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/sysfs.o
+  CC [M]  /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/pci.o
+  DTC     /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/vpci_template.dtb
+  DTB     /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/vpci_template.dtb.S
+  AS [M]  /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/vpci_template.dtb.o
+  LD [M]  /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/driver/jailhouse.o
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/amd-seattle-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/amd-seattle-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/amd-seattle-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/amd-seattle-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/amd-seattle.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/amd-seattle.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/espressobin-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/espressobin-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/espressobin-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/espressobin-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/espressobin.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/espressobin.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/foundation-v8-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/foundation-v8-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/foundation-v8-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/foundation-v8-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/foundation-v8.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/foundation-v8.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/hikey-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/hikey-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/hikey-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/hikey-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/hikey.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/hikey.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8dxl-inmate-demo-aarch32.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8dxl-inmate-demo-aarch32.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8dxl-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8dxl-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8dxl.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8dxl.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mm-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mm-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mm-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mm-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mm.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mm.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mn-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mn-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mn-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mn-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mn.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mn.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mp-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mp-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mp-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mp-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mp.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mp.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb0-col.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb0-col.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb0.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb0.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb1-col.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb1-col.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb1.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb1.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb2-col.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb2-col.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb2.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-bomb2.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-col.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-col.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8mq.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8qm-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8qm-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8qm-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8qm-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8qm.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/imx8qm.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx1-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx1-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx1-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx1-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx1.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx1.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx2-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx2-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx2.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/jetson-tx2.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am625-sk-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am625-sk-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am625-sk-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am625-sk-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am625-sk.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am625-sk.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am654-idk-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am654-idk-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am654-idk-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am654-idk-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am654-idk.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-am654-idk.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j7200-evm-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j7200-evm-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j7200-evm-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j7200-evm-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j7200-evm.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j7200-evm.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j721e-evm-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j721e-evm-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j721e-evm-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j721e-evm-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j721e-evm.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/k3-j721e-evm.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1028a-rdb-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1028a-rdb-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1028a-rdb-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1028a-rdb-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1028a-rdb.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1028a-rdb.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb-dpaa-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb-dpaa-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1043a-rdb.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1046a-rdb-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1046a-rdb-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1046a-rdb-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1046a-rdb-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1046a-rdb.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1046a-rdb.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1088a-rdb-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1088a-rdb-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1088a-rdb-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1088a-rdb-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1088a-rdb.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls1088a-rdb.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls2088a-rdb-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls2088a-rdb-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls2088a-rdb-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls2088a-rdb-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls2088a-rdb.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/ls2088a-rdb.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/macchiatobin-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/macchiatobin-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/macchiatobin-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/macchiatobin-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/macchiatobin.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/macchiatobin.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/miriac-sbc-ls1046a-inmate-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/miriac-sbc-ls1046a-inmate-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/miriac-sbc-ls1046a-linux-demo.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/miriac-sbc-ls1046a-linux-demo.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/miriac-sbc-ls1046a.o
+  OBJCOPY /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/miriac-sbc-ls1046a.cell
+  CC      /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.o
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:35:65: error: trigraph ??! ignored, use -trigraphs to enable [-Werror=trigraphs]
+   35 |                                 .maintenance_irq = 25,          ??!
+      |                                                                  
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:35:65: error: expected expression before ‘?’ token
+   35 |                                 .maintenance_irq = 25,          ??!
+      |                                                                 ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:36:49: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   36 |                                 .gic_version = 3,
+      |                                                 ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:37:56: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   37 |                                 .gicd_base = 0x0f400000,
+      |                                                        ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:38:56: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   38 |                                 .gicr_base = 0x0f440000,
+      |                                                        ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:41:69: error: trigraph ??! ignored, use -trigraphs to enable [-Werror=trigraphs]
+   41 |                                 .num_irqs = 32 + 960,           960 ??!
+      |                                                                      
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:197:27: error: extra brace group at end of initializer
+  197 |                 /* GIC */ {
+      |                           ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:197:27: note: (near initialization for ‘config.irqchips[6]’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:200:39: error: extra brace group at end of initializer
+  200 |                         .pin_bitmap = {
+      |                                       ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:200:39: note: (near initialization for ‘config.irqchips[6]’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:197:27: error: excess elements in struct initializer [-Werror]
+  197 |                 /* GIC */ {
+      |                           ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:197:27: note: (near initialization for ‘config.irqchips[6]’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:206:9: error: field name not in record or union initializer
+  206 |         .pci_devices = {
+      |         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:206:9: note: (near initialization for ‘config.irqchips’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:207:38: error: braces around scalar initializer [-Werror]
+  207 |                 /* 00:00.0 (demo) */ {
+      |                                      ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:207:38: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:208:25: error: field name not in record or union initializer
+  208 |                         .type = JAILHOUSE_PCI_TYPE_IVSHMEM,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:208:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:209:25: error: field name not in record or union initializer
+  209 |                         .domain = 3,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:209:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:209:35: error: excess elements in scalar initializer [-Werror]
+  209 |                         .domain = 3,
+      |                                   ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:209:35: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:210:25: error: field name not in record or union initializer
+  210 |                         .bdf = 0 << 3,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:210:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:210:32: error: excess elements in scalar initializer [-Werror]
+  210 |                         .bdf = 0 << 3,
+      |                                ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:210:32: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:25: error: field name not in record or union initializer
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:25: error: braces around scalar initializer [-Werror]
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:25: note: (near initialization for ‘config.irqchips[7].address’)
+In file included from /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:3:
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:29: error: excess elements in scalar initializer [-Werror]
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:29: note: (near initialization for ‘config.irqchips[7].address’)
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:41: error: excess elements in scalar initializer [-Werror]
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:41: note: (near initialization for ‘config.irqchips[7].address’)
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:17: error: excess elements in scalar initializer [-Werror]
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                 ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:17: note: (near initialization for ‘config.irqchips[7].address’)
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                 ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:29: error: excess elements in scalar initializer [-Werror]
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:29: note: (near initialization for ‘config.irqchips[7].address’)
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:41: error: excess elements in scalar initializer [-Werror]
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:41: note: (near initialization for ‘config.irqchips[7].address’)
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:244:9: error: excess elements in scalar initializer [-Werror]
+  244 |         {                                               \
+      |         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:244:9: note: (near initialization for ‘config.irqchips[7].address’)
+  244 |         {                                               \
+      |         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:211:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  211 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:212:25: error: field name not in record or union initializer
+  212 |                         .shmem_regions_start = 0,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:212:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:212:48: error: excess elements in scalar initializer [-Werror]
+  212 |                         .shmem_regions_start = 0,
+      |                                                ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:212:48: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:213:25: error: field name not in record or union initializer
+  213 |                         .shmem_dev_id = 0,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:213:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:213:41: error: excess elements in scalar initializer [-Werror]
+  213 |                         .shmem_dev_id = 0,
+      |                                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:213:41: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:214:25: error: field name not in record or union initializer
+  214 |                         .shmem_peers = 2,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:214:25: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:214:40: error: excess elements in scalar initializer [-Werror]
+  214 |                         .shmem_peers = 2,
+      |                                        ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:214:40: note: (near initialization for ‘config.irqchips[7].address’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:215:25: error: field name not in record or union initializer
+  215 |                         .shmem_protocol = JAILHOUSE_SHMEM_PROTO_UNDEFINED,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:215:25: note: (near initialization for ‘config.irqchips[7].address’)
+In file included from /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:3:
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:209:49: error: excess elements in scalar initializer [-Werror]
+  209 | #define JAILHOUSE_SHMEM_PROTO_UNDEFINED         0x0000
+      |                                                 ^~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:215:43: note: in expansion of macro ‘JAILHOUSE_SHMEM_PROTO_UNDEFINED’
+  215 |                         .shmem_protocol = JAILHOUSE_SHMEM_PROTO_UNDEFINED,
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:209:49: note: (near initialization for ‘config.irqchips[7].address’)
+  209 | #define JAILHOUSE_SHMEM_PROTO_UNDEFINED         0x0000
+      |                                                 ^~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:215:43: note: in expansion of macro ‘JAILHOUSE_SHMEM_PROTO_UNDEFINED’
+  215 |                         .shmem_protocol = JAILHOUSE_SHMEM_PROTO_UNDEFINED,
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:217:44: error: braces around scalar initializer [-Werror]
+  217 |                 /* 00:01.0 (networking) */ {
+      |                                            ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:217:44: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:218:25: error: field name not in record or union initializer
+  218 |                         .type = JAILHOUSE_PCI_TYPE_IVSHMEM,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:218:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:219:25: error: field name not in record or union initializer
+  219 |                         .domain = 3,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:219:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:219:35: error: excess elements in scalar initializer [-Werror]
+  219 |                         .domain = 3,
+      |                                   ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:219:35: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:220:25: error: field name not in record or union initializer
+  220 |                         .bdf = 1 << 3,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:220:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:220:32: error: excess elements in scalar initializer [-Werror]
+  220 |                         .bdf = 1 << 3,
+      |                                ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:220:32: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:25: error: field name not in record or union initializer
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:25: error: braces around scalar initializer [-Werror]
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:25: note: (near initialization for ‘config.irqchips[7].id’)
+In file included from /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:3:
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:29: error: excess elements in scalar initializer [-Werror]
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:29: note: (near initialization for ‘config.irqchips[7].id’)
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:41: error: excess elements in scalar initializer [-Werror]
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:245:41: note: (near initialization for ‘config.irqchips[7].id’)
+  245 |                 0xfffff000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:17: error: excess elements in scalar initializer [-Werror]
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                 ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:17: note: (near initialization for ‘config.irqchips[7].id’)
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                 ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:29: error: excess elements in scalar initializer [-Werror]
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:29: note: (near initialization for ‘config.irqchips[7].id’)
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                             ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:41: error: excess elements in scalar initializer [-Werror]
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:246:41: note: (near initialization for ‘config.irqchips[7].id’)
+  246 |                 0x00000000, 0x00000000, 0x00000000,     \
+      |                                         ^~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:244:9: error: excess elements in scalar initializer [-Werror]
+  244 |         {                                               \
+      |         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:244:9: note: (near initialization for ‘config.irqchips[7].id’)
+  244 |         {                                               \
+      |         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:221:37: note: in expansion of macro ‘JAILHOUSE_IVSHMEM_BAR_MASK_INTX’
+  221 |                         .bar_mask = JAILHOUSE_IVSHMEM_BAR_MASK_INTX,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:222:25: error: field name not in record or union initializer
+  222 |                         .shmem_regions_start = 4,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:222:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:222:48: error: excess elements in scalar initializer [-Werror]
+  222 |                         .shmem_regions_start = 4,
+      |                                                ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:222:48: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:223:25: error: field name not in record or union initializer
+  223 |                         .shmem_dev_id = 0,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:223:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:223:41: error: excess elements in scalar initializer [-Werror]
+  223 |                         .shmem_dev_id = 0,
+      |                                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:223:41: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:224:25: error: field name not in record or union initializer
+  224 |                         .shmem_peers = 2,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:224:25: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:224:40: error: excess elements in scalar initializer [-Werror]
+  224 |                         .shmem_peers = 2,
+      |                                        ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:224:40: note: (near initialization for ‘config.irqchips[7].id’)
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:225:25: error: field name not in record or union initializer
+  225 |                         .shmem_protocol = JAILHOUSE_SHMEM_PROTO_VETH,
+      |                         ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:225:25: note: (near initialization for ‘config.irqchips[7].id’)
+In file included from /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:3:
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:210:49: error: excess elements in scalar initializer [-Werror]
+  210 | #define JAILHOUSE_SHMEM_PROTO_VETH              0x0001
+      |                                                 ^~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:225:43: note: in expansion of macro ‘JAILHOUSE_SHMEM_PROTO_VETH’
+  225 |                         .shmem_protocol = JAILHOUSE_SHMEM_PROTO_VETH,
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/../include/jailhouse/cell-config.h:210:49: note: (near initialization for ‘config.irqchips[7].id’)
+  210 | #define JAILHOUSE_SHMEM_PROTO_VETH              0x0001
+      |                                                 ^~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:225:43: note: in expansion of macro ‘JAILHOUSE_SHMEM_PROTO_VETH’
+  225 |                         .shmem_protocol = JAILHOUSE_SHMEM_PROTO_VETH,
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:228:2: error: expected ‘}’ before ‘;’ token
+  228 | };
+      |  ^
+/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.c:11:36: note: to match this ‘{’
+   11 | } __attribute__((packed)) config = {
+      |                                    ^
+cc1: all warnings being treated as errors
+make[3]: *** [scripts/Makefile.build:295: /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs/arm64/orin.o] Error 1
+make[2]: *** [scripts/Makefile.build:559: /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/configs] Error 2
+make[1]: *** [Makefile:1910: /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse] Error 2
+make: *** [Makefile:40: modules] Error 2
+

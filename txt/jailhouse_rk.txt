@@ -218,6 +218,7 @@ make menuconfig
     - CONFIG_VIRTUALIZATION # must be disabled
     
     - CONFIG_MODVERSIONS # disabled by default
+    ------------------------------------------------------------------------------------------先设置到这里
     
     - CONFIG_DWC_XLGMAC # network driver! enable
     - CONFIG_STMMAC_ETH # change hierarchy from module to enabled
@@ -283,7 +284,8 @@ U-Boot Commands to Boot the new kernel
 
 On Frodo/Sam, connect to the first serial console of your board:
 
-  picocom -b 1500000 /dev/ttyUSB.rk3566.0
+  picocom -b 1500000 /dev/ttyUSB.rk3566.0			  		### picocom -b 115200 /dev/ttyUSB.orin.0
+  
 
 Then interrupt the boot process in the U-Boot console:
 
@@ -381,9 +383,12 @@ Use a fresh window / console for that.
 cd ~/Desktop/MA/RK3566
 
 export ARCH=arm64
+
 export CROSS_COMPILE=aarch64-linux-gnu-
-export KDIR=`pwd`/linux-rk3566
-export DESTDIR=`pwd`/build-rk3566
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+
+export KDIR=`pwd`/linux-rk3566		export KDIR=/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/kernel-jammy-src/
+export DESTDIR=`pwd`/build-rk3566		export DESTDIR=/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/rootfs/
 
 
   # you need to do the following steps only once
@@ -398,8 +403,8 @@ git switch minerva/next
   # NOTE: the configuration works for all RK3566, RK3568 and RK3588 boards!
 
 rm -f include/jailhouse/config.h
-echo "#define CONFIG_MACH_RK3588 1" >> include/jailhouse/config.h
-echo "#define CONFIG_RK3568_GENERIC 1" >> include/jailhouse/config.h
+echo "#define CONFIG_MACH_RK3588 1" >> include/jailhouse/config.h 			echo "#define CONFIG_MACH_AGX_ORIN 1" >> include/jailhouse/config.h
+echo "#define CONFIG_RK3568_GENERIC 1" >> include/jailhouse/config.h			xx
 echo "#define CONFIG_ARM_GIC_V3 1" >> include/jailhouse/config.h
 echo "#define CONFIG_TRACE_ERROR 1" >> include/jailhouse/config.h
 echo "#define CONFIG_CRASH_CELL_ON_PANIC 1" >> include/jailhouse/config.h
@@ -448,29 +453,58 @@ echo "#define CONFIG_DEBUG 1" >> include/jailhouse/config.h
 
   scp driver/jailhouse.ko                                            azuepke@sam:nfsroots/rk3566/lib/modules/6.1.104+/extra/driver/
   scp hypervisor/jailhouse.bin                                       azuepke@sam:nfsroots/rk3566/lib/firmware/
-  scp configs/arm64/rk3568*.cell configs/arm64/dts/inmate-rk3568.dtb azuepke@sam:nfsroots/rk3566/lib/firmware/
-
+  scp configs/arm64/rk3568*.cell configs/arm64/dts/inmate-rk3568.dtb azuepke@sam:nfsroots/rk3566/lib/firmware/	还没有dtb！！	
+	
 
 If you change the Linux driver, the hypervisor or the cell configuration,
 run "make" and copy the modified files to the target.
 
 
+-------------------------------------------------------------------------------------------------------
+picocom -b 115200 /dev/ttyUSB.orin.0
+
+
+jiajia on theia:
+
+export ARCH=arm64
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+export KDIR=/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/kernel-jammy-src/
+export DESTDIR=/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/rootfs/
+
+make clean
+make install
+
+rm -rf ../../../rootfs/usr/local/lib/python3.11/dist-packages/pyjailhouse/__pycache__/
+删除sam上jailhouse_docs/usr的所有内容再执行：
+scp -r ../../../rootfs/usr/* jiajia@sam:/home/jiajia/jailhouse_docs/usr/
+scp configs/arm64/orin.cell driver/jailhouse.ko hypervisor/jailhouse.bin jiajia@sam:/home/jiajia/jailhouse_docs
 
 
 
 
+jiajia on sam:
+
+先删除nvidia 上的jailhouse_docs 文件夹，再执行：
+scp -r /home/jiajia/jailhouse_docs/ nvidia@orin:/home/nvidia/
 
 
 
+jiajia on orin:
+
+rsync -av --ignore-existing --update /home/nvidia/jailhouse_docs/usr/ /usr/
+sudo cp /home/nvidia/jailhouse_docs/jailhouse.ko /lib/modules/5.15.122-rt-tegra/extra/drivers/
+sudo cp /home/nvidia/jailhouse_docs/jailhouse.bin /lib/firmware/
+sudo cp /home/nvidia/jailhouse_docs/orin.cell /lib/firmware/
+
+sudo modprobe jailhouse
+sudo jailhouse enable /lib/firmware/orin.cell
+
+
+-------------------------------------------------------------------------------------------------------
 
 
 
-
-
-
-
-
-Linux Kernel for the Guest Cell
+*Linux Kernel for the Guest Cell
 ================================
 
 To run a Linux kernel in the guest cell, we need a Linux kernel and an initrd.
@@ -512,12 +546,12 @@ Access the system through the first serial console.
   # NOTE: this is only needed if the serial console doesn't show any output!
   # NOTE: do not apply normally!
 
-  stty -F /dev/ttyS0 1500000 ; cat /dev/ttyS0 &
+  stty -F /dev/ttyS0 1500000 ; cat /dev/ttyS0 &		### picocom -b 115200 /dev/ttyUSB.orin.0
 
 
   # 1. load jailhouse driver on the target
 
-  modprobe jailhouse
+  modprobe jailhouse 						### sudo modprobe jailhouse												-y
 
   # should print the following on the console:
   # [  124.054104] jailhouse: loading out-of-tree module taints kernel.
@@ -527,7 +561,7 @@ Access the system through the first serial console.
   # 2. load root cell configuration
   # NOTE: use "rk3568.cell" for the RK3588
 
-  jailhouse enable /lib/firmware/rk3568.cell
+  jailhouse enable /lib/firmware/rk3568.cell			### jailhouse enable /lib/firmware/orin.cell										-y
 
   # should print the following on the console:
   # [...]
@@ -555,7 +589,7 @@ Access the system through the first serial console.
   jailhouse cell destroy 1
 
 
-  # 5. disable Jailhouse
+  # 5. disable Jailhouse			-y
   # NOTE: afterwards, you can redo the steps from 2 on
 
   jailhouse disable

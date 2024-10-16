@@ -19,10 +19,10 @@
 		
 		cd ~/Desktop/MA/orin/Linux_for_Tegra/source 		进入 source 文件夹，此时里面没有其他文件夹
 
-		$ tar xf kernel_src.tbz2							解压缩后，source 下面出现 kernel 文件夹:
-													   			-里面存有内核源码 kernel-jammy-src 文件夹 (包含很多文件夹如 arch,block...) 和一个makefile
+		$ tar xf kernel_src.tbz2				解压缩后，source 下面出现 kernel 文件夹:
+									-里面存有内核源码 kernel-jammy-src 文件夹 (包含很多文件夹如 arch,block...) 和一个makefile
 
-		$ tar xf kernel_oot_modules_src.tbz2				出现 hardware, hwpm, nvethernetrm， nvgpu, nvidia-oot 文件夹
+		$ tar xf kernel_oot_modules_src.tbz2			出现 hardware, hwpm, nvethernetrm， nvgpu, nvidia-oot 文件夹
 
 		$ tar xf nvidia_kernel_display_driver_source.tbz2	出现 nvdisplay 文件夹
 
@@ -40,6 +40,11 @@
 		export INSTALL_MOD_PATH=/home/jiajia/Desktop/MA/orin/Linux_for_Tegra/rootfs/
 		export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
 		
+		echo $CROSS_COMPILE
+		echo $INSTALL_MOD_PATH
+		echo $KERNEL_HEADERS
+		
+		
 		
 		
 		
@@ -47,6 +52,9 @@
 		
 		./generic_rt_build.sh "enable"		 (build 实时 kernel)
 		make -C kernel
+		make -C kernel 2>&1 | tee build_log.txt
+		
+kernel-jammy：	make -j $(nproc) LOCALVERSION=-rt-tegra 2>&1 | tee build_log.txt
 		
 		
 		sudo -E make install -C kernel		（build NVIDIA in-Tree Modules）
@@ -91,7 +99,7 @@
 
 		$ export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
 
-		$ make -C kernel    					完成后显示: "Kernel Image: /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/Image"
+		$ make -C kernel    		完成后显示: "Kernel Image: /home/jiajia/Desktop/MA/orin/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/boot/Image"
 
 
 
@@ -252,9 +260,9 @@ make install -C kernel
 
 
 reserved-memory {
-jailhouse_mem: jailhouse_mem@87d000000 {
-no-map;
-reg = <0x8 0x7d000000 0x0 0x03000000>;
+	jailhouse_mem: jailhouse_mem@87d000000 {
+		no-map;
+		reg = <0x8 0x7d000000 0x0 0x03000000>;
+	};
 };
-
 

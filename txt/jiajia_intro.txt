@@ -19,6 +19,23 @@ a44ff658-a4500017 : System RAM
 			reg = <0x0 0x0a800000 0x0 0x05800000>;
 		};
 	};
+	
+	
+	
+	
+	reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		jailhouse@c0000000  {
+			no-map;
+			reg = <0x0 0xc0000000 0x0 0x08000000>;
+		};
+	};
+	
+	
+	
 
 -> freie Wahl:
   0a80'0000 -- 1000'0000  92 MB für Jailhouse
