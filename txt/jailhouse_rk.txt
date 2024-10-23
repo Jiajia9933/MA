@@ -461,10 +461,20 @@ run "make" and copy the modified files to the target.
 
 
 -------------------------------------------------------------------------------------------------------
+
+
+
 picocom -b 115200 /dev/ttyUSB.orin.0
 
 
+
+
+
 jiajia on theia:
+
+
+ssh jiajia@theia
+cd /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/jailhouse/
 
 export ARCH=arm64
 export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
@@ -491,8 +501,18 @@ scp -r /home/jiajia/jailhouse_docs/ nvidia@orin:/home/nvidia/
 
 jiajia on orin:
 
+sudo rm -rf /lib/firmware/orin.cell
+sudo rm -rf /lib/firmware/jailhouse.bin
+sudo rm -rf /lib/modules/5.15.122-rt-tegra/extra/drivers/jailhouse.ko
+sudo rm -rf /lib/modules/5.15.122-rt-tegra/extra/driver/jailhouse.ko
+
+
+
+
+
 rsync -av --ignore-existing --update /home/nvidia/jailhouse_docs/usr/ /usr/
 sudo cp /home/nvidia/jailhouse_docs/jailhouse.ko /lib/modules/5.15.122-rt-tegra/extra/drivers/
+sudo cp /home/nvidia/jailhouse_docs/jailhouse.ko /lib/modules/5.15.122-rt-tegra/extra/driver/
 sudo cp /home/nvidia/jailhouse_docs/jailhouse.bin /lib/firmware/
 sudo cp /home/nvidia/jailhouse_docs/orin.cell /lib/firmware/
 

@@ -58,6 +58,7 @@ export INSTALL_MOD_PATH=/home/jiajia/5_15_136/withPatch/Linux_for_Tegra/rootfs/
 export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
 
 
+./generic_rt_build.sh "enable"
 make -C kernel/kernel-jammy-src -j $(nproc) LOCALVERSION=-rt-tegra 2>&1 | tee build_log.txt
 
 
@@ -94,6 +95,22 @@ scp /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/source/kernel/kernel-jammy-s
 
 scp -r /home/jiajia/5_15_136/withPatch/Linux_for_Tegra/rootfs/lib/modules/5.15.122-rt-tegra/ jiajia@sam:/home/jiajia/
 
+
+
+放到orin上：
+
+scp tegra234-p3737-0000+p3701-0000-nv.dtb nvidia@orin:/home/nvidia/
+scp Image nvidia@orin:/home/nvidia/
+scp -r 5.15.122-rt-tegra/ nvidia@orin:/home/nvidia/
+
+
+
+sudo mv Image /boot/
+sudo mv tegra234-p3737-0000+p3701-0000.dtb /boot/dtb/
+sudo mv 5.15.122-rt-tegra/ /lib/modules/
+
+cd /boot/dtb/
+sudo cp tegra234-p3737-0000+p3701-0000.dtb kernel_tegra234-p3737-0000+p3701-0000-nv.dtb
 
 -----------------------------------------------------------------------------------------------------
 
